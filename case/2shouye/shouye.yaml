@@ -1,0 +1,234 @@
+userInfo:
+  path: /web-server/api/user/userInfo
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {}
+  extract_key:
+    id: $.data.id
+    institutionId: $.data.institutionId
+
+  assert_expression:
+    ['"00000" in "$.msg"','"00000" in "$.status"']
+getUserId:
+  path: /web-server/im/getUserId
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"id":$.id}
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"00000" in "$.status"']
+authority:
+  path: /web-server/api/authority
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {}
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"00000" in "$.status"']
+sy_getMsgcount:
+  path: /web-server/api/patientinfo/getMsgCount
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"state":false}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+sy_listAllUse:
+  path: /web-server/api/soft/listAllUse
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {}
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"00000" in "$.status"']
+sy_30day:
+  path: /web-server/api/follow/agentHomepageUseList?number=30
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+sy_search:
+  path: /web-server/api/device/update/search
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"type":2,"name":"","svn":"","status":2,"page":{"showCount":15,"currentPage":1}}
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"00000" in "$.status"']
+
+sy_consumableCount:
+  path: /web-server/api/device/consumableCount
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+sy_compliance:
+  path: /web-server/api/compliance/statistics?During=30
+  method: get
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+sy_follow:
+  path: /web-server/api/follow/ayerComplianceStatistics
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"dayTime":"2022-09-27"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+sy_7day:
+  path: /web-server/api/follow/agentHomepageUseList?number=7
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+
+sy_selAllRoleAndArea:
+  path: /web-server/api/areaPersonnel/selAllRoleAndArea
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+sy_getUserListAll:
+  path: /web-server/api/user/getUserListAll
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {}
+  extract_key:
+    countryId: $.data.countryId
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+sy_shiqu:
+  path: /web-server/api/patientinfo/selZoneAll?countryId=$.countryId
+  method: get
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+sy_grxxxg:
+  path: /web-server/api/user/organizationUpdate
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "userName": "shiyan",
+      "firstName": "shi",
+      "lastName": "yan",
+      "institutionName": "shiyan",
+      "phone": "159141152241",
+      "email": "2454254125@qq.com",
+      "fax": "159141152241",
+      "country": "United States",
+      "state": "guangdong",
+      "city": "shenzhen",
+      "street": "Room-601 & 602, Building B&C,",
+      "postalCode": "510520",
+      "timeZone": "America/Adak",
+      "file": ""
+    }
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"','"Updated Success" == "$.data.msg"']
+sy_hqhzid:
+  path: /web-server/api/patientinfo/patient_do_list
+  method: post
+  remark: 获取修改密码接口ID
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"patientId":"","patientName":"","page":{"currentPage":1,"showCount":15},"sqlNames":["userName"]}
+  extract_key:
+    mmhzid: $.data.data[0].patientId
+  assert_expression:
+    [ '"00000" in "$.msg"','"00000" in "$.status"' ]
+sy_updatePwd:
+  path: /web-server/api/patientinfo/updatePwd
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"newPwd":"rx123456","TnewPwd":"rx123456","oldPwd":"rx123456","userId":"$.id"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+sy_agentHomepageList:
+  path: /web-server/api/follow/agentHomepageList
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+searchMessage:
+  path: /web-server/api/notify/searchMessage
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"ownerId":$.id,"page":{"showCount":15,"currentPage":1}}
+  extract_key:
+  assert_expression:
+    [ '"00000" in "$.msg"','"00000" in "$.status"' ]
+
+

@@ -1,0 +1,322 @@
+yslist:
+  path: /web-server/api/patientinfo/doctor_do_list
+  method: post
+  remark: 医生组合搜索
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"firstNmae":"1","doctorId":"1","account":"1","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"00000" == "$.status"']
+yslb_userId_desc:
+  path: /web-server/api/patientinfo/doctor_do_list
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"userId","orderByTwo":"desc","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"00000" == "$.status"']
+yslb_userId_asc:
+  path: /web-server/api/patientinfo/doctor_do_list
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"userId","orderByTwo":"asc","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"00000" == "$.status"']
+yslb_jobtitle_desc:
+  path: /web-server/api/patientinfo/doctor_do_list
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"jobtitle","orderByTwo":"desc","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"00000" == "$.status"']
+yslb_jobtitle_asc:
+  path: /web-server/api/patientinfo/doctor_do_list
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"jobtitle","orderByTwo":"asc","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"00000" == "$.status"']
+ys_hqjgid:
+  path: /web-server/api/patientinfo/doctor_do_list
+  method: post
+  remark: 获取医生编辑ID，机构ID
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"page":{"currentPage":1,"showCount":15}}
+  extract_key:
+    ysjgid: $.data.data[6].institutuinId
+  assert_expression:
+    ['"00000" in "$.msg"','"00000" == "$.status"']
+newdoctor:
+  path: /web-server/api/patientinfo/save
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  # 中文为cellPhone英文为phone
+  data:
+    {
+      "sta": "add",
+      "ts": "ts",
+      "institutionId": $.ysjgid,
+      "userName": "xinzengyisheng",
+      "firstName": "萨芬",
+      "lastName": "医生",
+      "organType": "Sleep Lab",
+      "jobtitle": "小小",
+      "beGoodAt": "检查",
+      "briefIntroduction": "喜欢运动ya，热爱生活",
+      "exclusiveService": "心有灵犀",
+      "email": "qw2e@we.fd",
+      "cellPhone": 13123271212,
+      "phone": 131232312312,
+      "country": "Andorra",
+      "timeZone": "Europe/Andorra",
+      "state": "lingzhi",
+      "city": "tianhe",
+      "street": "fansheng",
+      "postalCode": "11212231312",
+      "delName": "医生"
+    }
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"success" in "$.errMsg"']
+getdoctorinfo:
+  path: /web-server/api/patientinfo/doctor_do_list
+  method: post
+  remark: 获取编辑、删除医生信息
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"page":{"currentPage":1,"showCount":15}}
+  extract_key:
+    ysid: $.data.data[0].userId
+  assert_expression:
+    ['"00000" in "$.msg"','"0000" in "$.status"']
+yishenghaomayouxiang:
+  path: /web-server/api/user/phoneEmail
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"cellPhone":13129231221,"phone":"","email":""}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+#    ['"00000" in "$.msg"','"0000" in "$.status"']
+ysdoctoredit:
+  path: /web-server/api/patientinfo/save
+  method: post
+  remark: 医生编辑
+  is_run: false
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "userId": "$.ysid",
+      "userName": "xinzengyisheng",
+      "password": 34sd3fsf3@rw,
+      "firstName": "111111111111111",
+      "rights": "new_Web",
+      "roleId": null,
+      "lastLogin": "",
+      "ip": "",
+      "status": "0",
+      "bz": "",
+      "skin": "default",
+      "email": null,
+      "number": null,
+      "lastName": "11111112w11111111",
+      "sex": null,
+      "street": null,
+      "state": null,
+      "city": null,
+      "country": "Afghanistan",
+      "postalCode": null,
+      "type": 2,
+      "addTime": null,
+      "headPhoto": null,
+      "validataCode": null,
+      "outDate": null,
+      "birth": null,
+      "department": null,
+      "jobtitle": "11111we1111111111",
+      "company": null,
+      "institutionName": null,
+      "fax": null,
+      "addUser": "$.ysjgid",
+      "organType": "Hospital",
+      "updateTime": null,
+      "updateUser": null,
+      "timeZone": "Asia/Kabul",
+      "hospitalName": null,
+      "regFlag": null,
+      "privacyTime": null,
+      "privacyStatus": null,
+      "region": null,
+      "statusReason": null,
+      "statusComment": null,
+      "reviewComment": null,
+      "cellPhone": "15102198816",
+      "phone": "15102154316",
+      "confirmMethod": null,
+      "confirmTime": null,
+      "googleAuthenticatorToken": null,
+      "title": null,
+      "briefIntroduction": null,
+      "beGoodAt": null,
+      "theFirstLevelDepartment": null,
+      "theSecondLevelDepartment": null,
+      "hospitalId": null,
+      "exclusiveService": null,
+      "onlineConsultation": null,
+      "deviceStyle": null,
+      "institutionType": null,
+      "principal": null,
+      "countryZh": null,
+      "doctorNumber": null,
+      "patientNumber": null,
+      "deviceNumber": null,
+      "patientId": null,
+      "operator": null,
+      "countryId": "AF",
+      "countryCount": "0",
+      "userString": null,
+      "institutionId": $.ysjgid,
+      "delName": "医生",
+      "logUserName": null,
+      "doctorName": null,
+      "age": null,
+      "height": null,
+      "weight": null,
+      "institutionNameDirectory": "shiyan",
+      "inName": null,
+      "grade": null,
+      "gradeName": null,
+      "orderBy": null,
+      "orderByTwo": null,
+      "page": null,
+      "institutionUserName": null,
+      "instantMessagingAccount": null,
+      "phoneNumbersOne": null,
+      "deviceId": null,
+      "deviceType": null,
+      "complianceNum": null,
+      "complianceNumTwo": null,
+      "sta": "edit"
+    }
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"00000" == "$.status"']
+ysgl_getInvitationDoctorList:
+  path: /web-server/api/userDoctorInstitutuinInfo/getInvitationDoctorList
+  method: post
+  remark: 邀请医生列表
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"page":{"currentPage":1,"showCount":15},"invitationDoctorId":$.institutionId}
+  extract_key:
+    newyqysid: $.data.data[1].doctorId
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+ysgl_sendDoctorJoinRequestQuery:
+  path: /web-server/api/userDoctorInstitutuinInfo/sendDoctorJoinRequestQuery
+  method: post
+  remark: 邀请医生查询
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"doctorAccountOrId":"shiyisheng"}
+  extract_key:
+    yqysid: $.data.doctorId
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+ysgl_sendDoctorJoinRequest:
+  path: /web-server/api/userDoctorInstitutuinInfo/sendDoctorJoinRequest
+  method: post
+  remark: 点击邀请医生
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"invitationDoctorId":"$.yqysid"}
+  extract_key:
+  assert_expression:
+    ['"50041" in "$.errCode"','"False" in "$.success"']
+ysgl_sendDoctorJoinRequestQuerynew:
+  path: /web-server/api/userDoctorInstitutuinInfo/sendDoctorJoinRequestQuery
+  method: post
+  remark: 邀请医生查询
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"doctorAccountOrId":"$.newyqysid"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+ysgl_sendDoctorJoinRequestnew:
+  path: /web-server/api/userDoctorInstitutuinInfo/sendDoctorJoinRequest
+  method: post
+  remark: 点击邀请医生
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"invitationDoctorId":"$.newyqysid"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+ysgl_getInvitationDoctorList3:
+  path: /web-server/api/userDoctorInstitutuinInfo/getInvitationDoctorList
+  method: post
+  remark: 获取邀请医生no
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"page":{"currentPage":1,"showCount":15},"invitationDoctorId":$.institutionId}
+  extract_key:
+    newysno: $.data.data[0].id
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+ysgl_insReturnDoctorInvitation:
+  path: /web-server/api/userDoctorInstitutuinInfo/insReturnDoctorInvitation
+  method: post
+  remark: 撤回邀请医生,状态（0 待处理 1 已接受  2已拒绝  3已撤回 4已解除）
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"invitationId":$.newysno,"checkStatus":3}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+ysdoctordelete:
+  path: /web-server/api/patientinfo/orgDoDel
+  method: post
+  remark: 删除医生
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"userId":"$.ysid","delName":"医生"}
+  extract_key:
+  assert_expression:
+    ['"success" in "$.result"','"Delete Successfully" in "$.msg"']
+

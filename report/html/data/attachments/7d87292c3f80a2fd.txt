@@ -1,0 +1,8 @@
+INFO     test:test_case.py:17 ---开始运行 "zc_countryIdshiqu"用例,该用例属于case/0zhuce/zhuce.yaml文件---
+INFO     test:case.py:19 用例原始数据：{'path': '/web-server/api/patientinfo/selZoneAll?countryId=CN', 'method': 'get', 'remark': None, 'is_run': True, 'precondition_sql': None, 'data': None, 'extract_key': None, 'assert_expression': ['"200" in "$.errCode"', '"True" in "$.success"', '"CN" == "$.data[0].countryIdZone"'], 'case_title': 'zc_countryIdshiqu'}
+INFO     test:requests_.py:58 get请求的最终请求地址:https://uat.resvent.com/web-server/api/patientinfo/selZoneAll?countryId=CN
+INFO     test:requests_.py:61 https://uat.resvent.com/web-server/api/patientinfo/selZoneAll?countryId=CN返回结果：{'success': True, 'data': [{'id': 146, 'countryIdZone': 'CN', 'zoneName': 'Asia/Shanghai', 'tzidZhCN': '中国标准时间'}, {'id': 147, 'countryIdZone': 'CN', 'zoneName': 'Asia/Urumqi', 'tzidZhCN': '中国标准时间'}], 'errCode': 200}
+INFO     test:case.py:11 提取参数字典None
+INFO     test:assert_.py:16 初始断言列表[]
+INFO     test:assert_.py:35 断言表达式新列表：['"200" in "200"', '"True" in "True"', '"CN" == "CN"']
+INFO     test:case.py:45 -----"zc_countryIdshiqu"用例运行完成------

@@ -1,0 +1,8 @@
+INFO     test:test_case.py:17 ---开始运行 "sy_grxxxg"用例,该用例属于case/2shouye/shouye.yaml文件---
+INFO     test:case.py:19 用例原始数据：{'path': '/web-server/api/user/organizationUpdate', 'method': 'post', 'remark': None, 'is_run': True, 'precondition_sql': None, 'data': {'userName': 'shiyan', 'firstName': 'shi', 'lastName': 'yan', 'institutionName': 'shiyan', 'phone': '159141152241', 'email': '2454254125@qq.com', 'fax': '159141152241', 'country': 'United States', 'state': 'guangdong', 'city': 'shenzhen', 'street': 'Room-601 & 602, Building B&C,', 'postalCode': '510520', 'timeZone': 'America/Adak', 'file': ''}, 'extract_key': None, 'assert_expression': ['"200" in "$.errCode"', '"True" in "$.success"', '"Updated Success" == "$.data.msg"'], 'case_title': 'sy_grxxxg'}
+INFO     test:requests_.py:70 POST请求的最终请求地址:https://uat.resvent.com/web-server/api/user/organizationUpdate
+INFO     test:requests_.py:73 https://uat.resvent.com/web-server/api/user/organizationUpdate返回结果：{'success': True, 'data': {'msg': 'Updated Success', 'result': 'success'}, 'errCode': 200}
+INFO     test:case.py:11 提取参数字典None
+INFO     test:assert_.py:16 初始断言列表[]
+INFO     test:assert_.py:35 断言表达式新列表：['"200" in "200"', '"True" in "True"', '"Updated Success" == "Updated Success"']
+INFO     test:case.py:45 -----"sy_grxxxg"用例运行完成------

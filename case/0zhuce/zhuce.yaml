@@ -1,0 +1,125 @@
+zc_timeZoneList:
+  path: /web-server/api/patientinfo/timeZoneList
+  method: get
+  remark: zc_timeZoneList
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+zc_phoneEmail:
+  path: /web-server/api/user/phoneEmail
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"email":"xianrong.song@resvent.com"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+zc_sendEmailCode1:
+  path: /web-server/api/user/sendEmailCode
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"typeNum":1,"pwdType":1,"toAddress":"xianrong.song@resvent.com"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+zc_sendEmailCode2:
+  path: /web-server/api/user/sendEmailCode
+  method: post
+  remark: 邮箱获取验证码
+  is_run: false
+  precondition_sql:
+  # 前置sql
+  data: {"typeNum":2,"toAddress":"xianrong.song@resvent.com","verifyCode":"294798"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+zc_phoneEmailname:
+  path: /web-server/api/user/phoneEmail
+  method: post
+  remark: 账号已存在
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"userName":"shiyan"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"','"0" != "$.data.userName"']
+zc_phoneEmailname2:
+  path: /web-server/api/user/phoneEmail
+  method: post
+  remark: 账号不存在
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"userName":"zdhuanzhezhuce"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"','"0" == "$.data.userName"']
+zc_countryIdshiqu:
+  path: /web-server/api/patientinfo/selZoneAll?countryId=CN
+  method: get
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"','"CN" == "$.data[0].countryIdZone"']
+zc_patientRegister:
+  path: /web-server/api/user/patientRegister
+  method: post
+  remark:
+  is_run: false
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "email": "xianrong.song@resvent.com",
+      "userName": "fdsfa23",
+      "password": "123qwe",
+      "firstName": "wqeq",
+      "lastName": "eqewe",
+      "sex": "Male",
+      "birth": "2022-11-08",
+      "age": 0,
+      "setupDate": "2022-11-08",
+      "phone": "",
+      "cellPhone": "13131313213",
+      "deviceId": "GB-2B469087",
+      "type": "iBreeze 20A",
+      "timeZone": "Asia/Shanghai",
+      "country": "China",
+      "institutionId": "41654500788",
+      "institutionName": "新美国一级经销商-名称"
+    }
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+zc_sendEmailCode3:
+  path: /web-server/api/user/sendEmailCode
+  method: post
+  remark: 忘记密码
+  is_run: False
+  precondition_sql:
+  # 前置sql
+  data: {"typeNum":3,"toAddress":"xianrong.song@resvent.com","verifyCode":"238934","passWord":"rx123456","passWordTwo":"rx123456"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+
+
+
+
+
+
+

@@ -1,0 +1,163 @@
+rystafflist:
+  path: /web-server/api/areaPersonnel/selAreaENtityVolistPage
+  method: post
+  remark: 人员搜索
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "firsName": "",
+      "userName": "",
+      "roleName": "",
+      "orderBy": "add_time",
+      "orderByTwo": "desc",
+      "page": {
+        "currentPage": 1,
+        "showCount": 15
+      }
+    }
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+ry_stafflist_area_name_desc:
+  path: /web-server/api/areaPersonnel/selAreaENtityVolistPage
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"firsName":"","userName":"","roleName":"","orderBy":"area_name","orderByTwo":"desc","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+ry_stafflist_area_name_asc:
+  path: /web-server/api/areaPersonnel/selAreaENtityVolistPage
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"firsName":"","userName":"","roleName":"","orderBy":"area_name","orderByTwo":"asc","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+ry_stafflist_add_time_desc:
+  path: /web-server/api/areaPersonnel/selAreaENtityVolistPage
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"firsName":"","userName":"","roleName":"","orderBy":"add_time","orderByTwo":"desc","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+ry_stafflist_add_time_asc:
+  path: /web-server/api/areaPersonnel/selAreaENtityVolistPage
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"firsName":"","userName":"","roleName":"","orderBy":"add_time","orderByTwo":"asc","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+rynewstaff:
+  path: /web-server/api/areaPersonnel/addRoleAll
+  method: post
+  remark: 新增人员
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "userName": "renyuanxinzeng",
+      "firstName": "testrenyuan",
+      "lastName": "renyuan2",
+      "areaId": "$.qyid2",
+      "roleUserId": "$.jsid2",
+      "cellPhone": "13143652323",
+      "phone": "16125242536",
+      "email": "WQEQWs@rw.rsw",
+      "country": "Andorra",
+      "timeZone": "Europe/Andorra",
+      "state": "DADASDA1REW",
+      "city": "DADASDAR1EW",
+      "street": "vDADAS1DAREW",
+      "postalCode": "53258243532",
+      "userId": "",
+      "delName": "人员"
+    }
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+rygetstaffid:
+  path: /web-server/api/areaPersonnel/selAreaENtityVolistPage
+  method: post
+  remark: 获取人员ID
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "firsName": "",
+      "userName": "",
+      "roleName": "",
+      "orderBy": "add_time",
+      "orderByTwo": "desc",
+      "page": {
+        "currentPage": 1,
+        "showCount": 15
+      }
+    }
+  extract_key:
+    ryid: $.data.data[0].userId
+#    ryid2: $.data.data[2].userId
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+rydisablestaff:
+  path: /web-server/api/areaPersonnel/forbiddenUserStatus
+  method: post
+  remark: 禁用人员
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "status": 0,
+      "userId": "$.ryid"
+    }
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+ryenablestaff:
+  path: /web-server/api/areaPersonnel/forbiddenUserStatus
+  method: post
+  remark: 启用人员
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "status": 3,
+      "userId": "$.ryid"
+    }
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+rydeletestaff:
+  path: /web-server/api/areaPersonnel/delLogRoleAll?userId=$.ryid
+  method: get
+  remark: 删除人员
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "userId": "$.ryid"
+    }
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']

@@ -1,0 +1,8 @@
+INFO     test:test_case.py:17 ---开始运行 "updatapwd"用例,该用例属于case/3hzlb/hzlb.yaml文件---
+INFO     test:case.py:19 用例原始数据：{'path': '/web-server/api/patientinfo/resetPwdUser?userId=$.hzid', 'method': 'get', 'remark': '重置密码', 'is_run': True, 'precondition_sql': None, 'data': None, 'extract_key': None, 'assert_expression': ['"200" in "$.errCode"', '"True" in "$.success"'], 'case_title': 'updatapwd'}
+INFO     test:requests_.py:58 get请求的最终请求地址:https://uat.resvent.com/web-server/api/patientinfo/resetPwdUser?userId=31673316294
+INFO     test:requests_.py:61 https://uat.resvent.com/web-server/api/patientinfo/resetPwdUser?userId=31673316294返回结果：{'success': True, 'data': 'ResAssist@237', 'errCode': 200}
+INFO     test:case.py:11 提取参数字典None
+INFO     test:assert_.py:16 初始断言列表[]
+INFO     test:assert_.py:35 断言表达式新列表：['"200" in "200"', '"True" in "True"']
+INFO     test:case.py:45 -----"updatapwd"用例运行完成------

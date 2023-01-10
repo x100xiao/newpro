@@ -1,0 +1,8 @@
+INFO     test:test_case.py:17 ---开始运行 "sy_logout"用例,该用例属于case/1dl/testdl.yaml文件---
+INFO     test:case.py:19 用例原始数据：{'path': '/web-server/logout', 'method': 'post', 'remark': None, 'is_run': True, 'precondition_sql': None, 'data': {'userId': '41608015906'}, 'extract_key': None, 'assert_expression': ['"00000" in "$.msg"', '"00000" in "$.status"'], 'case_title': 'sy_logout'}
+INFO     test:requests_.py:70 POST请求的最终请求地址:https://uat.resvent.com/web-server/logout
+INFO     test:requests_.py:73 https://uat.resvent.com/web-server/logout返回结果：{'status': '00000', 'msg': '00000', 'data': None}
+INFO     test:case.py:11 提取参数字典None
+INFO     test:assert_.py:16 初始断言列表[]
+INFO     test:assert_.py:35 断言表达式新列表：['"00000" in "00000"', '"00000" in "00000"']
+INFO     test:case.py:45 -----"sy_logout"用例运行完成------

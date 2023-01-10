@@ -1,0 +1,8 @@
+INFO     test:test_case.py:17 ---开始运行 "zc_phoneEmailname2"用例,该用例属于case/0zhuce/zhuce.yaml文件---
+INFO     test:case.py:19 用例原始数据：{'path': '/web-server/api/user/phoneEmail', 'method': 'post', 'remark': '账号不存在', 'is_run': True, 'precondition_sql': None, 'data': {'userName': 'zdhuanzhezhuce'}, 'extract_key': None, 'assert_expression': ['"200" in "$.errCode"', '"True" in "$.success"', '"0" == "$.data.userName"'], 'case_title': 'zc_phoneEmailname2'}
+INFO     test:requests_.py:70 POST请求的最终请求地址:https://uat.resvent.com/web-server/api/user/phoneEmail
+INFO     test:requests_.py:73 https://uat.resvent.com/web-server/api/user/phoneEmail返回结果：{'success': True, 'data': {'emailNum': 0, 'phoneNum': 0, 'userName': 0}, 'errCode': 200}
+INFO     test:case.py:11 提取参数字典None
+INFO     test:assert_.py:16 初始断言列表[]
+INFO     test:assert_.py:35 断言表达式新列表：['"200" in "200"', '"True" in "True"', '"0" == "0"']
+INFO     test:case.py:45 -----"zc_phoneEmailname2"用例运行完成------

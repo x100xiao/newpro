@@ -1,0 +1,8 @@
+INFO     test:test_case.py:17 ---开始运行 "pd_listall"用例,该用例属于case/3hzlb/hzlb.yaml文件---
+INFO     test:case.py:19 用例原始数据：{'path': '/web-server/api/patientinfo/patient_do_list', 'method': 'post', 'remark': None, 'is_run': True, 'precondition_sql': None, 'data': {'patientId': '2', 'patientName': '3', 'doctorName': '4', 'areaPlace': 43, 'deviceId': '5', 'type': 'iBreeze 20C', 'useDay': '30', 'userName': '1', 'email': '6', 'notUseDay': '7', 'page': {'currentPage': 1, 'showCount': 15}, 'sqlNames': ['patientName', 'userId', 'userName', 'notUseDay', 'email', 'useDay', 'inName', 'doctorName', 'type', 'areaPlace', 'deviceId']}, 'extract_key': None, 'assert_expression': ["'00000' in '$.msg'", "'00000' in '$.status'"], 'case_title': 'pd_listall'}
+INFO     test:requests_.py:70 POST请求的最终请求地址:https://uat.resvent.com/web-server/api/patientinfo/patient_do_list
+INFO     test:requests_.py:73 https://uat.resvent.com/web-server/api/patientinfo/patient_do_list返回结果：{'status': '00000', 'msg': '00000', 'data': {'page': {'showCount': 15, 'totalPage': 0, 'totalResult': 0, 'currentPage': 0, 'currentResult': 0, 'entityOrField': False, 'orderby': None, 'keyword': None}, 'data': []}}
+INFO     test:case.py:11 提取参数字典None
+INFO     test:assert_.py:16 初始断言列表[]
+INFO     test:assert_.py:35 断言表达式新列表：["'00000' in '00000'", "'00000' in '00000'"]
+INFO     test:case.py:45 -----"pd_listall"用例运行完成------

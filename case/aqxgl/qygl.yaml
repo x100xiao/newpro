@@ -1,0 +1,176 @@
+qynewregion:
+  path: /web-server/api/area/addAreaManage
+  method: post
+  remark: 新增区域
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "areaDesc": "23c4a3234",
+      "areaName": "3c4a234"
+    }
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+qygetregionid:
+  path: /web-server/api/area/areaMangeAlllistPage
+  method: post
+  remark: 获取区域ID,区域ID2为新增人员使用
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "areaName": "",
+      "page": {
+        "currentPage": 1,
+        "showCount": 15
+      }
+    }
+  extract_key:
+    qyid: $.data.data[0].id
+    qyid2: $.data.data[1].id
+    qymz: $.data.data[0].areaName
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+qy_list_add_time_desc:
+  path: /web-server/api/area/areaMangeAlllistPage
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"areaName":"","orderBy":"addTime","orderByTwo":"desc","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    [ "'200' in '$.errCode'","'True' in '$.success'" ]
+qy_list_add_time_asc:
+  path: /web-server/api/area/areaMangeAlllistPage
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"areaName":"","orderBy":"addTime","orderByTwo":"asc","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    [ "'200' in '$.errCode'","'True' in '$.success'" ]
+qyeditregion:
+  path: /web-server/api/area/updateAreaManage
+  method: post
+  remark: 编辑区域
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "areaDesc": "23c4a3234",
+      "areaName": "3c4a234",
+      "id": "$.qyid"
+    }
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+qydeleteregion:
+  path: /web-server/api/area/delAreaManage?areaName=$.qymz&areaId=$.qyid
+  method: get
+  remark: 删除区域
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+qyregioninfolist:
+  path: /web-server/api/area/sonAreaMangelistByPage
+  method: post
+  remark: 区域详情搜索
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "deviceId": "",
+      "doctorName": "",
+      "patientName": "",
+      "type": "",
+      "assigned": "",
+      "orderBy": "addTime",
+      "orderByTwo": "desc",
+      "id": "19",
+      "page": {
+        "currentPage": 1,
+        "showCount": 15
+      }
+    }
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+getMsgCount:
+  path: /web-server/api/patientinfo/getMsgCount
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {"state":false}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+institutionTree:
+  path: /web-server/api/user/institutionTree
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"0000" in "$.status"']
+deviceType:
+  path: /web-server/api/device/deviceType
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"0000" in "$.status"']
+listAllUse:
+  path: /web-server/api/soft/listAllUse
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"0000" in "$.status"']
+search:
+  path: /web-server/api/device/update/search
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "type": 2,
+      "name": "",
+      "svn": "",
+      "status": 2,
+      "page": {
+        "showCount": 15,
+        "currentPage": 1
+      }
+    }
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"0000" in "$.status"']

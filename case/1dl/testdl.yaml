@@ -1,0 +1,112 @@
+sy_logout:
+  path: /web-server/logout
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"userId":"41608015906"}
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"00000" in "$.status"']
+get_token:
+  path: /web-server/code
+  method: post
+  remark: 获取token信息
+  is_run: true
+  precondition_sql:
+    # 前置sql，可用于处理不能同名的字段如：注册用户，用户名不能相同，可前置删除或修改
+    #  - DELETE from zp_monitor_data_gb2B454405 where device_id = 'GB-2B454405'
+  data:
+  # 下个接口的参数依赖，注意替换键
+  extract_key:
+    token: $.data.token
+    yzm: $.data.image
+  assert_expression:
+    ["'00000' in '$.msg'","'00000' in '$.status'"]
+errorname:
+  path: /web-server/login
+  method: post
+  remark: 登录
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      'changAuthCode': "",
+      'code': $.yzm,
+      'password': 'rx123456',
+      'username': 'shiyan2'
+    }
+  extract_key:
+  assert_expression:
+    ["'User account does not exist' in '$.msg'","'A0201' in '$.status'"]
+nousername:
+  path: /web-server/login
+  method: post
+  remark: 登录
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      'changAuthCode': "",
+      'code': $.yzm,
+      'password': 'rx123456',
+      'username':
+    }
+  extract_key:
+  assert_expression:
+    ["'User account does not exist' in '$.msg'","'A0201' in '$.status'"]
+nopwd:
+  path: /web-server/login
+  method: post
+  remark: 登录
+  is_run: false
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      'changAuthCode': "",
+      'code': $.yzm,
+      'username': 'shiyan',
+      'password':
+
+    }
+  extract_key:
+  assert_expression:
+    ["'用户密码错误' in '$.msg'","'A0210' in '$.status'"]
+errorpwd:
+  path: /web-server/login
+  method: post
+  remark: 登录
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      'changAuthCode': "",
+      'code': $.yzm,
+      'password': 'rx1234567',
+      'username': 'shiyan'
+    }
+  extract_key:
+  assert_expression:
+    ['" password is wrong" in "$.msg"',"'A0210' in '$.status'"]
+truenamepwd:
+  path: /web-server/login
+  method: post
+  remark: 登录
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      'changAuthCode': "",
+      'code': $.yzm,
+      'password': 'rx123456',
+      'username': 'shiyan'
+    }
+  extract_key:
+  assert_expression:
+    ["'00000' in '$.msg'","'00000' in '$.status'"]

@@ -1,0 +1,114 @@
+usergetMsgCount:
+  path: /web-server/api/patientinfo/getMsgCount
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"state":false}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+userlistAllUse:
+  path: /web-server/api/soft/listAllUse
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {}
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"0000" in "$.status"']
+usersearch:
+  path: /web-server/api/device/update/search
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"type":2,"name":"","svn":"","status":2,"page":{"showCount":15,"currentPage":1}}
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"0000" in "$.status"']
+msg_user_do_list_lastLogin_desc:
+  path: /web-server/api/user/msg_user_do_list
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"account":"","firstName":"","type":"","orderBy":"lastLogin","orderByTwo":"desc","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+msg_user_do_list_lastLogin_asc:
+  path: /web-server/api/user/msg_user_do_list
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"account":"","firstName":"","type":"","orderBy":"lastLogin","orderByTwo":"asc","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+msg_user_do_list_add_time_desc:
+  path: /web-server/api/user/msg_user_do_list
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"account":"","firstName":"","type":"","orderBy":"add_time","orderByTwo":"desc","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+msg_user_do_list_add_time_asc:
+  path: /web-server/api/user/msg_user_do_list
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"account":"","firstName":"","type":"","orderBy":"add_time","orderByTwo":"asc","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+msg_user_do_list_1:
+  path: /web-server/api/user/msg_user_do_list
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"account":"","firstName":"","type":"","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+msg_user_do_list_2:
+  path: /web-server/api/user/msg_user_do_list
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"account":"","firstName":"","type":"","userName":"shiyan","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+msg_user_do_list_3:
+  path: /web-server/api/user/msg_user_do_list
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"account":"","firstName":"shi","type":4,"page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+
+
+
+

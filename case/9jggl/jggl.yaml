@@ -1,0 +1,701 @@
+jgnewinstitution:
+  path: /web-server/api/patientinfo/agent/save
+  method: post
+  remark: 新增机构
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "institutionType": "",
+      "userName": "2323423",
+      "institutionName": "323422",
+      "firstName": "322432",
+      "lastName": "32423",
+      "region": "323242",
+      "userId": "",
+      "phone": 1316494512,
+      "cellPhone": "",
+      "email": "xq3932@sfds.df",
+      "fax": "",
+      "principal": "",
+      "country": "Åland Islands",
+      "timeZone": "Europe/Mariehamn",
+      "state": "",
+      "city": "",
+      "street": "",
+      "postalCode": "",
+      "img": "",
+      "authorityInfoVos": [ {
+        "id": 2,
+        "authorityName": "业务中心",
+        "parentId": 1,
+        "authorizingUrl": "serviceCenter",
+        "isSelected": true,
+        "level": 2,
+        "authGroup": null,
+        "operates": null,
+        "subAuthoritys": [ {
+          "id": 27,
+          "authorityName": "依从性管理",
+          "parentId": 2,
+          "authorizingUrl": "compliance",
+          "isSelected": true,
+          "level": 3,
+          "authGroup": null,
+          "operates": null,
+          "subAuthoritys": [ {
+            "id": 28,
+            "authorityName": "患者列表",
+            "parentId": 27,
+            "authorizingUrl": "patient",
+            "isSelected": true,
+            "level": 4,
+            "authGroup": "1,2,3,4,7,8,9,10,11,12,19",
+            "operates": [ {
+              "authId": 1,
+              "authName": "menu_auth_create",
+              "authRemark": "新增",
+              "isSelected": true
+            }, {
+              "authId": 2,
+              "authName": "menu_auth_delete",
+              "authRemark": "删除",
+              "isSelected": true
+            }, {
+              "authId": 3,
+              "authName": "menu_auth_update",
+              "authRemark": "编辑",
+              "isSelected": true
+            }, {
+              "authId": 4,
+              "authName": "menu_auth_select",
+              "authRemark": "查看",
+              "isSelected": true
+            }, {
+              "authId": 8,
+              "authName": "menu_auth_untie",
+              "authRemark": "解绑",
+              "isSelected": true
+            }, {
+              "authId": 9,
+              "authName": "menu_auth_prescription",
+              "authRemark": "处方",
+              "isSelected": true
+            }, {
+              "authId": 10,
+              "authName": "menu_auth_health",
+              "authRemark": "健康履历",
+              "isSelected": true
+            }, {
+              "authId": 11,
+              "authName": "menu_auth_send_msg",
+              "authRemark": "发送消息",
+              "isSelected": true
+            } ],
+            "subAuthoritys": null
+          }, {
+            "id": 52,
+            "authorityName": "依从性列表",
+            "parentId": 27,
+            "authorizingUrl": "complianceList",
+            "isSelected": true,
+            "level": 4,
+            "authGroup": "12",
+            "operates": [ {
+              "authId": 12,
+              "authName": "menu_auth_report",
+              "authRemark": "报告",
+              "isSelected": true
+            } ],
+            "subAuthoritys": null
+          }, {
+            "id": 53,
+            "authorityName": "随访管理",
+            "parentId": 27,
+            "authorizingUrl": "followUpManagement",
+            "isSelected": true,
+            "level": 3,
+            "authGroup": "1,2,3,4,11",
+            "operates": [ {
+              "authId": 1,
+              "authName": "menu_auth_create",
+              "authRemark": "新增",
+              "isSelected": true
+            }, {
+              "authId": 2,
+              "authName": "menu_auth_delete",
+              "authRemark": "删除",
+              "isSelected": true
+            }, {
+              "authId": 3,
+              "authName": "menu_auth_update",
+              "authRemark": "编辑",
+              "isSelected": true
+            }, {
+              "authId": 4,
+              "authName": "menu_auth_select",
+              "authRemark": "查看",
+              "isSelected": true
+            }, {
+              "authId": 11,
+              "authName": "menu_auth_send_msg",
+              "authRemark": "发送消息",
+              "isSelected": true
+            } ],
+            "subAuthoritys": null
+          }, {
+            "id": 57,
+            "authorityName": "R-Track",
+            "parentId": 27,
+            "authorizingUrl": "userRtrack",
+            "isSelected": true,
+            "level": 4,
+            "authGroup": "4",
+            "operates": [ {
+              "authId": 4,
+              "authName": "menu_auth_select",
+              "authRemark": "查看",
+              "isSelected": true
+            } ],
+            "subAuthoritys": null
+          }, {
+            "id": 32,
+            "authorityName": "患者日志",
+            "parentId": 27,
+            "authorizingUrl": "patientLog",
+            "isSelected": true,
+            "level": 4,
+            "authGroup": "4",
+            "operates": [ {
+              "authId": 4,
+              "authName": "menu_auth_select",
+              "authRemark": "查看",
+              "isSelected": true
+            } ],
+            "subAuthoritys": null
+          } ]
+        }, {
+          "id": 33,
+          "authorityName": "医生管理",
+          "parentId": 2,
+          "authorizingUrl": "doctorManagement",
+          "isSelected": true,
+          "level": 3,
+          "authGroup": null,
+          "operates": null,
+          "subAuthoritys": [ {
+            "id": 34,
+            "authorityName": "医生列表",
+            "parentId": 33,
+            "authorizingUrl": "doctorList",
+            "isSelected": true,
+            "level": 4,
+            "authGroup": "1,2,3,4,19",
+            "operates": [ {
+              "authId": 1,
+              "authName": "menu_auth_create",
+              "authRemark": "新增",
+              "isSelected": true
+            }, {
+              "authId": 2,
+              "authName": "menu_auth_delete",
+              "authRemark": "删除",
+              "isSelected": true
+            }, {
+              "authId": 3,
+              "authName": "menu_auth_update",
+              "authRemark": "编辑",
+              "isSelected": true
+            }, {
+              "authId": 4,
+              "authName": "menu_auth_select",
+              "authRemark": "查看",
+              "isSelected": true
+            }, {
+              "authId": 19,
+              "authName": "menu_auth_export",
+              "authRemark": "导出",
+              "isSelected": true
+            } ],
+            "subAuthoritys": null
+          } ]
+        } ]
+      }, {
+        "id": 4,
+        "authorityName": "管理中心",
+        "parentId": 1,
+        "authorizingUrl": "manageCenter",
+        "isSelected": true,
+        "level": 2,
+        "authGroup": null,
+        "operates": null,
+        "subAuthoritys": [ {
+          "id": 6,
+          "authorityName": "设备管理",
+          "parentId": 4,
+          "authorizingUrl": "device",
+          "isSelected": true,
+          "level": 3,
+          "authGroup": null,
+          "operates": null,
+          "subAuthoritys": [ {
+            "id": 13,
+            "authorityName": "呼吸机",
+            "parentId": 6,
+            "authorizingUrl": "ventilator",
+            "isSelected": true,
+            "level": 4,
+            "authGroup": "1,2,3,4,5,19",
+            "operates": [ {
+              "authId": 1,
+              "authName": "menu_auth_create",
+              "authRemark": "新增",
+              "isSelected": true
+            }, {
+              "authId": 2,
+              "authName": "menu_auth_delete",
+              "authRemark": "删除",
+              "isSelected": true
+            }, {
+              "authId": 3,
+              "authName": "menu_auth_update",
+              "authRemark": "编辑",
+              "isSelected": true
+            }, {
+              "authId": 4,
+              "authName": "menu_auth_select",
+              "authRemark": "查看",
+              "isSelected": true
+            }, {
+              "authId": 5,
+              "authName": "menu_auth_allot",
+              "authRemark": "分配",
+              "isSelected": true
+            }, {
+              "authId": 19,
+              "authName": "menu_auth_export",
+              "authRemark": "导出",
+              "isSelected": true
+            } ],
+            "subAuthoritys": null
+          } ]
+        }, {
+          "id": 24,
+          "authorityName": "机构管理",
+          "parentId": 4,
+          "authorizingUrl": "institutionManagement",
+          "isSelected": true,
+          "level": 3,
+          "authGroup": null,
+          "operates": null,
+          "subAuthoritys": [ {
+            "id": 25,
+            "authorityName": "医院管理",
+            "parentId": 24,
+            "authorizingUrl": "hospitalManagement",
+            "isSelected": true,
+            "level": 4,
+            "authGroup": "1,2,3,4,14",
+            "operates": [ {
+              "authId": 1,
+              "authName": "menu_auth_create",
+              "authRemark": "新增",
+              "isSelected": true
+            }, {
+              "authId": 2,
+              "authName": "menu_auth_delete",
+              "authRemark": "删除",
+              "isSelected": true
+            }, {
+              "authId": 3,
+              "authName": "menu_auth_update",
+              "authRemark": "编辑",
+              "isSelected": true
+            }, {
+              "authId": 4,
+              "authName": "menu_auth_select",
+              "authRemark": "查看",
+              "isSelected": true
+            }, {
+              "authId": 14,
+              "authName": "menu_auth_state",
+              "authRemark": "状态",
+              "isSelected": true
+            } ],
+            "subAuthoritys": null
+          }, {
+            "id": 31,
+            "authorityName": "机构管理",
+            "parentId": 24,
+            "authorizingUrl": "dealerManage",
+            "isSelected": true,
+            "level": 4,
+            "authGroup": "1,2,3,4,17,19",
+            "operates": [ {
+              "authId": 1,
+              "authName": "menu_auth_create",
+              "authRemark": "新增",
+              "isSelected": true
+            }, {
+              "authId": 2,
+              "authName": "menu_auth_delete",
+              "authRemark": "删除",
+              "isSelected": true
+            }, {
+              "authId": 3,
+              "authName": "menu_auth_update",
+              "authRemark": "编辑",
+              "isSelected": true
+            }, {
+              "authId": 4,
+              "authName": "menu_auth_select",
+              "authRemark": "查看",
+              "isSelected": true
+            }, {
+              "authId": 17,
+              "authName": "menu_auth_maintain",
+              "authRemark": "维护",
+              "isSelected": true
+            }, {
+              "authId": 19,
+              "authName": "menu_auth_export",
+              "authRemark": "导出",
+              "isSelected": true
+            } ],
+            "subAuthoritys": null
+          } ]
+        }, {
+          "id": 37,
+          "authorityName": "权限管理",
+          "parentId": 4,
+          "authorizingUrl": "jurisdictionManagement",
+          "isSelected": true,
+          "level": 3,
+          "authGroup": null,
+          "operates": null,
+          "subAuthoritys": [ {
+            "id": 38,
+            "authorityName": "人员管理",
+            "parentId": 37,
+            "authorizingUrl": "staffManagement",
+            "isSelected": true,
+            "level": 4,
+            "authGroup": "1,2,3,4,14,19",
+            "operates": [ {
+              "authId": 1,
+              "authName": "menu_auth_create",
+              "authRemark": "新增",
+              "isSelected": true
+            }, {
+              "authId": 2,
+              "authName": "menu_auth_delete",
+              "authRemark": "删除",
+              "isSelected": true
+            }, {
+              "authId": 3,
+              "authName": "menu_auth_update",
+              "authRemark": "编辑",
+              "isSelected": true
+            }, {
+              "authId": 4,
+              "authName": "menu_auth_select",
+              "authRemark": "查看",
+              "isSelected": true
+            }, {
+              "authId": 14,
+              "authName": "menu_auth_state",
+              "authRemark": "状态",
+              "isSelected": true
+            }, {
+              "authId": 19,
+              "authName": "menu_auth_export",
+              "authRemark": "导出",
+              "isSelected": true
+            } ],
+            "subAuthoritys": null
+          }, {
+            "id": 39,
+            "authorityName": "角色管理",
+            "parentId": 37,
+            "authorizingUrl": "roleManagement",
+            "isSelected": true,
+            "level": 4,
+            "authGroup": "1,2,3,4",
+            "operates": [ {
+              "authId": 1,
+              "authName": "menu_auth_create",
+              "authRemark": "新增",
+              "isSelected": true
+            }, {
+              "authId": 2,
+              "authName": "menu_auth_delete",
+              "authRemark": "删除",
+              "isSelected": true
+            }, {
+              "authId": 3,
+              "authName": "menu_auth_update",
+              "authRemark": "编辑",
+              "isSelected": true
+            }, {
+              "authId": 4,
+              "authName": "menu_auth_select",
+              "authRemark": "查看",
+              "isSelected": true
+            } ],
+            "subAuthoritys": null
+          }, {
+            "id": 40,
+            "authorityName": "区域管理",
+            "parentId": 37,
+            "authorizingUrl": "areaManagement",
+            "isSelected": true,
+            "level": 4,
+            "authGroup": "1,2,3,4,19",
+            "operates": [ {
+              "authId": 1,
+              "authName": "menu_auth_create",
+              "authRemark": "新增",
+              "isSelected": true
+            }, {
+              "authId": 2,
+              "authName": "menu_auth_delete",
+              "authRemark": "删除",
+              "isSelected": true
+            }, {
+              "authId": 3,
+              "authName": "menu_auth_update",
+              "authRemark": "编辑",
+              "isSelected": true
+            }, {
+              "authId": 4,
+              "authName": "menu_auth_select",
+              "authRemark": "查看",
+              "isSelected": true
+            }, {
+              "authId": 19,
+              "authName": "menu_auth_export",
+              "authRemark": "导出",
+              "isSelected": true
+            } ],
+            "subAuthoritys": null
+          } ]
+        }, {
+          "id": 55,
+          "authorityName": "用户管理",
+          "parentId": 4,
+          "authorizingUrl": "userManagement",
+          "isSelected": true,
+          "level": 3,
+          "authGroup": null,
+          "operates": null,
+          "subAuthoritys": [ {
+            "id": 56,
+            "authorityName": "用户列表",
+            "parentId": 55,
+            "authorizingUrl": "userManagementList",
+            "isSelected": true,
+            "level": 4,
+            "authGroup": "3,11,14,19",
+            "operates": [ {
+              "authId": 3,
+              "authName": "menu_auth_update",
+              "authRemark": "编辑",
+              "isSelected": true
+            }, {
+              "authId": 11,
+              "authName": "menu_auth_send_msg",
+              "authRemark": "发送消息",
+              "isSelected": true
+            }, {
+              "authId": 14,
+              "authName": "menu_auth_state",
+              "authRemark": "状态",
+              "isSelected": true
+            }, {
+              "authId": 19,
+              "authName": "menu_auth_export",
+              "authRemark": "导出",
+              "isSelected": true
+            } ],
+            "subAuthoritys": null
+          } ]
+        } ]
+      } ]
+    }
+  extract_key:
+  assert_expression:
+    ["'success' in '$.result'","'success' in '$.msg'","'200' in '$.code'"]
+jggetinstitutionid:
+  path: /web-server/api/patientinfo/orgDoList
+  method: post
+  remark: 获取机构删除ID
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "country": "",
+      "userId": "",
+      "institutionType": "",
+      "institutionName": "",
+      "userName": "",
+      "orderBy": "add_time",
+      "orderByTwo": "desc",
+      "page": {
+        "currentPage": 1,
+        "showCount": 15
+      },
+      "sqlNames": [ "institutionName", "principal", "doctorNumber", "patientNumber", "deviceNumber", "addTime", "countryZh" ]
+    }
+  extract_key:
+    jgid: $.data.data[0].userId
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+jggl_orgDoList_userId_desc:
+  path: /web-server/api/patientinfo/orgDoList
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"userId","orderByTwo":"desc","page":{"currentPage":1,"showCount":15},"sqlNames":["userId"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+jggl_orgDoList_userId_asc:
+  path: /web-server/api/patientinfo/orgDoList
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"userId","orderByTwo":"asc","page":{"currentPage":1,"showCount":15},"sqlNames":["userId"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+jggl_orgDoList_institution_name_desc:
+  path: /web-server/api/patientinfo/orgDoList
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"institution_name","orderByTwo":"desc","page":{"currentPage":1,"showCount":15},"sqlNames":["institutionUserName"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+jggl_orgDoList_institution_name_asc:
+  path: /web-server/api/patientinfo/orgDoList
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"institution_name","orderByTwo":"asc","page":{"currentPage":1,"showCount":15},"sqlNames":["institutionUserName"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+jggl_orgDoList_doctor_number_desc:
+  path: /web-server/api/patientinfo/orgDoList
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"doctor_number","orderByTwo":"desc","page":{"currentPage":1,"showCount":15},"sqlNames":["doctorNumber"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+jggl_orgDoList_doctor_number_asc:
+  path: /web-server/api/patientinfo/orgDoList
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"doctor_number","orderByTwo":"asc","page":{"currentPage":1,"showCount":15},"sqlNames":["doctorNumber"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+jggl_orgDoList_patient_name_desc:
+  path: /web-server/api/patientinfo/orgDoList
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"patient_name","orderByTwo":"desc","page":{"currentPage":1,"showCount":15},"sqlNames":["patientNumber"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+jggl_orgDoList_patient_name_asc:
+  path: /web-server/api/patientinfo/orgDoList
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"patient_name","orderByTwo":"asc","page":{"currentPage":1,"showCount":15},"sqlNames":["patientNumber"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+jggl_orgDoList_device_number_desc:
+  path: /web-server/api/patientinfo/orgDoList
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"device_number","orderByTwo":"desc","page":{"currentPage":1,"showCount":15},"sqlNames":["deviceNumber"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+jggl_orgDoList_device_number_asc:
+  path: /web-server/api/patientinfo/orgDoList
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"device_number","orderByTwo":"asc","page":{"currentPage":1,"showCount":15},"sqlNames":["deviceNumber"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+jggl_orgDoList_add_time_desc:
+  path: /web-server/api/patientinfo/orgDoList
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"add_time","orderByTwo":"desc","page":{"currentPage":1,"showCount":15},"sqlNames":["addTime"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+jggl_orgDoList_add_time_asc:
+  path: /web-server/api/patientinfo/orgDoList
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"add_time","orderByTwo":"asc","page":{"currentPage":1,"showCount":15},"sqlNames":["addTime"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+jgdeleteinstitution:
+  path: /web-server/api/patientinfo/orgDoDel
+  method: post
+  remark: 删除机构
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "userId": "$.jgid",
+      "delName": "Institution"
+    }
+  extract_key:
+  assert_expression:
+    ['"success" in "$.result"','"Delete Successfully" in "$.msg"']

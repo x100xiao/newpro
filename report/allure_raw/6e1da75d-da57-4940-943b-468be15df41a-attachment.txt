@@ -1,0 +1,8 @@
+INFO     test:test_case.py:17 ---开始运行 "usergetMsgCount"用例,该用例属于case/byonghu/yonghulist.yaml文件---
+INFO     test:case.py:19 用例原始数据：{'path': '/web-server/api/patientinfo/getMsgCount', 'method': 'post', 'remark': None, 'is_run': True, 'precondition_sql': None, 'data': {'state': False}, 'extract_key': None, 'assert_expression': ['"200" in "$.errCode"', '"True" in "$.success"'], 'case_title': 'usergetMsgCount'}
+INFO     test:requests_.py:70 POST请求的最终请求地址:https://uat.resvent.com/web-server/api/patientinfo/getMsgCount
+INFO     test:requests_.py:73 https://uat.resvent.com/web-server/api/patientinfo/getMsgCount返回结果：{'success': True, 'data': 0, 'errCode': 200}
+INFO     test:case.py:11 提取参数字典None
+INFO     test:assert_.py:16 初始断言列表[]
+INFO     test:assert_.py:35 断言表达式新列表：['"200" in "200"', '"True" in "True"']
+INFO     test:case.py:45 -----"usergetMsgCount"用例运行完成------

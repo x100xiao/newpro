@@ -1,0 +1,232 @@
+hxjsearch:
+  path: /web-server/api/inventory/search
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"institutionId":"","deviceNo":"","deviceType":"","deviceVersion":"","assigned":"","netType":"","expireDateStartTime":"",
+         "expireDateEndTime":"","lifecycle":"","areaPlace":"","state":"","patientName":"","doctorName":"","page":{"currentPage":1,"showCount":15},"sqlNames":["type"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hxj_search_device_id_desc:
+  path: /web-server/api/inventory/search
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"deviceNo":"","assigned":"","orderBy":"device_id","orderByTwo":"desc","page":{"currentPage":1,"showCount":15},"sqlNames":["deviceId"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hxj_search_device_id_asc:
+  path: /web-server/api/inventory/search
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"deviceNo":"","assigned":"","orderBy":"device_id","orderByTwo":"asc","page":{"currentPage":1,"showCount":15},"sqlNames":["deviceId"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hxj_search_type_desc:
+  path: /web-server/api/inventory/search
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"deviceNo":"","assigned":"","orderBy":"type","orderByTwo":"desc","page":{"currentPage":1,"showCount":15},"sqlNames":["type"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hxj_search_type_asc:
+  path: /web-server/api/inventory/search
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"deviceNo":"","assigned":"","orderBy":"type","orderByTwo":"asc","page":{"currentPage":1,"showCount":15},"sqlNames":["type"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hxj_search_institutuin_name_desc:
+  path: /web-server/api/inventory/search
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"deviceNo":"","assigned":"","orderBy":"institutuin_name","orderByTwo":"desc","page":{"currentPage":1,"showCount":15},"sqlNames":["institutuinName"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hxj_search_institutuin_name_asc:
+  path: /web-server/api/inventory/search
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"deviceNo":"","assigned":"","orderBy":"institutuin_name","orderByTwo":"asc","page":{"currentPage":1,"showCount":15},"sqlNames":["institutuinName"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hxj_search_area_place_desc:
+  path: /web-server/api/inventory/search
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"deviceNo":"","assigned":"","orderBy":"area_place","orderByTwo":"desc","page":{"currentPage":1,"showCount":15},"sqlNames":["areaPlace"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hxj_search_area_place_asc:
+  path: /web-server/api/inventory/search
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"deviceNo":"","assigned":"","orderBy":"area_place","orderByTwo":"asc","page":{"currentPage":1,"showCount":15},"sqlNames":["areaPlace"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hxj_search_doctor_name_desc:
+  path: /web-server/api/inventory/search
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"deviceNo":"","assigned":"","orderBy":"doctor_name","orderByTwo":"desc","page":{"currentPage":1,"showCount":15},"sqlNames":["doctorName"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hxj_search_doctor_name_asc:
+  path: /web-server/api/inventory/search
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"deviceNo":"","assigned":"","orderBy":"doctor_name","orderByTwo":"asc","page":{"currentPage":1,"showCount":15},"sqlNames":["doctorName"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hxj_search_patient_name_desc:
+  path: /web-server/api/inventory/search
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"deviceNo":"","assigned":"","orderBy":"patient_name","orderByTwo":"desc","page":{"currentPage":1,"showCount":15},"sqlNames":["patientName"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hxj_search_patient_name_asc:
+  path: /web-server/api/inventory/search
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"deviceNo":"","assigned":"","orderBy":"patient_name","orderByTwo":"asc","page":{"currentPage":1,"showCount":15},"sqlNames":["patientName"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hxj_search_add_time_desc:
+  path: /web-server/api/inventory/search
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"deviceNo":"","assigned":"","orderBy":"add_time","orderByTwo":"desc","page":{"currentPage":1,"showCount":15},"sqlNames":["addTime"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hxj_search_add_time_asc:
+  path: /web-server/api/inventory/search
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"deviceNo":"","assigned":"","orderBy":"add_time","orderByTwo":"asc","page":{"currentPage":1,"showCount":15},"sqlNames":["addTime"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hxjinstitutionTree:
+  path: /web-server/api/user/institutionTree
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {}
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"0000" in "$.status"']
+hxjdeviceType:
+  path: /web-server/api/device/deviceType
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {}
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"0000" in "$.status"']
+hxjlistAvailableDeviceWithoutSubordinateDevice:
+  path: /web-server/api/inventory/listAvailableDeviceWithoutSubordinateDevice
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"institutionId":$.id}
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"0000" in "$.status"']
+hxjinstitutionList:
+  path: /web-server/api/user/institutionList
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"userId":$.id}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hxjlistAllUse:
+  path: /web-server/api/soft/listAllUse
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {}
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"0000" in "$.status"']
+hxjsbsearch:
+  path: /web-server/api/device/update/search
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"type":2,"name":"","svn":"","status":2,"page":{"showCount":15,"currentPage":1}}
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"0000" in "$.status"']

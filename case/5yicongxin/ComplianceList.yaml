@@ -1,0 +1,365 @@
+cpinstitutionList:
+  path: /web-server/api/user/institutionList
+  method: post
+  remark:
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+cpinstitutionTree:
+  path: /web-server/api/user/institutionTree
+  method: post
+  remark:
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {}
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"0000" in "$.status"']
+cpcomplianceList:
+  path: /web-server/api/follow/complianceList
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"dayNum":'30',"dayTime":random_time(),"page":{"currentPage":1,"showCount":15},"sqlNames":["userName","patientName","deviceId","latelTime","dayNum"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+cpcomplianceList7Days:
+  path: /web-server/api/follow/complianceList7Days
+  method: post
+  remark:
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {"dayNum":7,"dayTime":random_time(),"page":{"currentPage":1,"showCount":15},"sqlNames":["userName","patientName","deviceId","latelTime","dayNum"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+cplistAllUse:
+  path: /web-server/api/soft/listAllUse
+  method: post
+  remark:
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {}
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"0000" in "$.status"']
+cpsearch:
+  path: /web-server/api/device/update/search
+  method: post
+  remark:
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {"type":2,"name":"","svn":"","status":2,"page":{"showCount":15,"currentPage":1}}
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"0000" in "$.status"']
+cpcomplianceList_90:
+  path: /web-server/api/follow/complianceList
+  method: post
+  remark: 启用90天未依从
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {"dayNum":90,"dayTime":random_time(),"complianceNum":2,"page":{"currentPage":1,"showCount":15},"sqlNames":["dayNum"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+cpcomplianceList_user:
+  path: /web-server/api/follow/complianceList
+  method: post
+  remark: 排序
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {"dayNum":30,"dayTime":random_time(),"orderBy":"userId","orderByTwo":"desc","page":{"currentPage":1,"showCount":15},"sqlNames":["userId"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+cpcomplianceList_user2:
+  path: /web-server/api/follow/complianceList
+  method: post
+  remark: 排序
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {"dayNum":30,"dayTime":random_time(),"orderBy":"userId","orderByTwo":"asc","page":{"currentPage":1,"showCount":15},"sqlNames":["userId"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+cpcomplianceList_userName:
+  path: /web-server/api/follow/complianceList
+  method: post
+  remark: 排序
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {"dayNum":30,"dayTime":random_time(),"orderBy":"userName","orderByTwo":"desc","page":{"currentPage":1,"showCount":15},"sqlNames":["userName"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+cpcomplianceList_userName2:
+  path: /web-server/api/follow/complianceList
+  method: post
+  remark: 排序
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {"dayNum":30,"dayTime":random_time(),"orderBy":"userName","orderByTwo":"asc","page":{"currentPage":1,"showCount":15},"sqlNames":["userName"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+cpcomplianceList_setupDate:
+  path: /web-server/api/follow/complianceList
+  method: post
+  remark: 排序
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {"dayNum":30,"dayTime":random_time(),"orderBy":"setupDate","orderByTwo":"desc","page":{"currentPage":1,"showCount":15},"sqlNames":["setupDate"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+cpcomplianceList_setupDate2:
+  path: /web-server/api/follow/complianceList
+  method: post
+  remark: 排序
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {"dayNum":30,"dayTime":random_time(),"orderBy":"setupDate","orderByTwo":"asc","page":{"currentPage":1,"showCount":15},"sqlNames":["setupDate"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+cpcomplianceList_patientName:
+  path: /web-server/api/follow/complianceList
+  method: post
+  remark: 排序
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {"dayNum":30,"dayTime":random_time(),"orderBy":"patientName","orderByTwo":"desc","page":{"currentPage":1,"showCount":15},"sqlNames":["patientName"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+cpcomplianceList_patientName2:
+  path: /web-server/api/follow/complianceList
+  method: post
+  remark: 排序
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {"dayNum":30,"dayTime":random_time(),"orderBy":"patientName","orderByTwo":"asc","page":{"currentPage":1,"showCount":15},"sqlNames":["patientName"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+cpcomplianceList_doctorName:
+  path: /web-server/api/follow/complianceList
+  method: post
+  remark: 排序
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {"dayNum":30,"dayTime":random_time(),"orderBy":"doctorName","orderByTwo":"desc","page":{"currentPage":1,"showCount":15},"sqlNames":["doctorName"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+cpcomplianceList_doctorName2:
+  path: /web-server/api/follow/complianceList
+  method: post
+  remark: 排序
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {"dayNum":30,"dayTime":random_time(),"orderBy":"doctorName","orderByTwo":"asc","page":{"currentPage":1,"showCount":15},"sqlNames":["doctorName"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+cpcomplianceList_type:
+  path: /web-server/api/follow/complianceList
+  method: post
+  remark: 排序
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {"dayNum":30,"dayTime":random_time(),"orderBy":"type","orderByTwo":"desc","page":{"currentPage":1,"showCount":15},"sqlNames":["type"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+cpcomplianceList_type2:
+  path: /web-server/api/follow/complianceList
+  method: post
+  remark: 排序
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {"dayNum":30,"dayTime":random_time(),"orderBy":"type","orderByTwo":"asc","page":{"currentPage":1,"showCount":15},"sqlNames":["type"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+cpcomplianceList_deviceId:
+  path: /web-server/api/follow/complianceList
+  method: post
+  remark: 排序
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {"dayNum":30,"dayTime":random_time(),"orderBy":"deviceId","orderByTwo":"desc","page":{"currentPage":1,"showCount":15},"sqlNames":["deviceId"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+cpcomplianceList_deviceId2:
+  path: /web-server/api/follow/complianceList
+  method: post
+  remark: 排序
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {"dayNum":30,"dayTime":random_time(),"orderBy":"deviceId","orderByTwo":"asc","page":{"currentPage":1,"showCount":15},"sqlNames":["deviceId"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+cpcomplianceList_complianceNum:
+  path: /web-server/api/follow/complianceList
+  method: post
+  remark: 排序
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {"dayNum":30,"dayTime":random_time(),"orderBy":"complianceNum","orderByTwo":"desc","page":{"currentPage":1,"showCount":15},"sqlNames":["complianceNum"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+cpcomplianceList_complianceNum2:
+  path: /web-server/api/follow/complianceList
+  method: post
+  remark: 排序
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {"dayNum":30,"dayTime":random_time(),"orderBy":"complianceNum","orderByTwo":"asc","page":{"currentPage":1,"showCount":15},"sqlNames":["complianceNum"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+cpcomplianceList_use_num_day:
+  path: /web-server/api/follow/complianceList
+  method: post
+  remark: 排序
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {"dayNum":30,"dayTime":random_time(),"orderBy":"use_num_day","orderByTwo":"desc","page":{"currentPage":1,"showCount":15},"sqlNames":["use_num_day"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+cpcomplianceList_use_num_day2:
+  path: /web-server/api/follow/complianceList
+  method: post
+  remark: 排序
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {"dayNum":30,"dayTime":random_time(),"orderBy":"use_num_day","orderByTwo":"asc","page":{"currentPage":1,"showCount":15},"sqlNames":["use_num_day"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+cpcomplianceList_valid_num_day:
+  path: /web-server/api/follow/complianceList
+  method: post
+  remark: 排序
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {"dayNum":30,"dayTime":random_time(),"orderBy":"valid_num_day","orderByTwo":"desc","page":{"currentPage":1,"showCount":15},"sqlNames":["valid_num_day"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+cpcomplianceList_valid_num_day2:
+  path: /web-server/api/follow/complianceList
+  method: post
+  remark: 排序
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {"dayNum":30,"dayTime":random_time(),"orderBy":"valid_num_day","orderByTwo":"asc","page":{"currentPage":1,"showCount":15},"sqlNames":["valid_num_day"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+cpcomplianceList_ahi:
+  path: /web-server/api/follow/complianceList
+  method: post
+  remark: 排序
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {"dayNum":30,"dayTime":random_time(),"orderBy":"ahi","orderByTwo":"desc","page":{"currentPage":1,"showCount":15},"sqlNames":["ahi"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+cpcomplianceList_ahi2:
+  path: /web-server/api/follow/complianceList
+  method: post
+  remark: 排序
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {"dayNum":30,"dayTime":random_time(),"orderBy":"ahi","orderByTwo":"asc","page":{"currentPage":1,"showCount":15},"sqlNames":["ahi"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+cpcomplianceList_leak:
+  path: /web-server/api/follow/complianceList
+  method: post
+  remark: 排序
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {"dayNum":30,"dayTime":random_time(),"orderBy":"leak","orderByTwo":"desc","page":{"currentPage":1,"showCount":15},"sqlNames":["leak"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+cpcomplianceList_leak2:
+  path: /web-server/api/follow/complianceList
+  method: post
+  remark: 排序
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {"dayNum":30,"dayTime":random_time(),"orderBy":"leak","orderByTwo":"asc","page":{"currentPage":1,"showCount":15},"sqlNames":["leak"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+cpcomplianceList_latelTime:
+  path: /web-server/api/follow/complianceList
+  method: post
+  remark: 排序
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {"dayNum":30,"dayTime":random_time(),"orderBy":"latelTime","orderByTwo":"desc","page":{"currentPage":1,"showCount":15},"sqlNames":["latelTime"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+cpcomplianceList_latelTime2:
+  path: /web-server/api/follow/complianceList
+  method: post
+  remark: 排序
+  is_run: TRUE
+  precondition_sql:
+  # 前置sql
+  data: {"dayNum":30,"dayTime":random_time(),"orderBy":"latelTime","orderByTwo":"asc","page":{"currentPage":1,"showCount":15},"sqlNames":["latelTime"]}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+
+

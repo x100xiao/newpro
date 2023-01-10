@@ -1,0 +1,8 @@
+INFO     test:test_case.py:17 ---开始运行 "sy_agentHomepageList"用例,该用例属于case/2shouye/shouye.yaml文件---
+INFO     test:case.py:19 用例原始数据：{'path': '/web-server/api/follow/agentHomepageList', 'method': 'post', 'remark': None, 'is_run': True, 'precondition_sql': None, 'data': {}, 'extract_key': None, 'assert_expression': ['"200" in "$.errCode"', '"True" in "$.success"'], 'case_title': 'sy_agentHomepageList'}
+INFO     test:requests_.py:70 POST请求的最终请求地址:https://uat.resvent.com/web-server/api/follow/agentHomepageList
+INFO     test:requests_.py:73 https://uat.resvent.com/web-server/api/follow/agentHomepageList返回结果：{'success': True, 'data': {'patientAllNum': None, 'patientMonthNum': None, 'patientMonthRatio': '0%', 'deviceInfoVos': None, 'complianceNum': None, 'notUseNum': None, 'notComplianceNum': None, 'avgUseDay': None, 'avgValidDay': None, 'ahiStatisticsVos': None, 'leakStatisticsVos': None, 'patientSumNum': 42599, 'patientThisMonthNum': 3, 'doctorSumNum': 66, 'doctorThisMonthNum': 0, 'deviceSumNum': 209, 'activateCount': 135, 'deviceNetTypeCount': [{'date': 'WIFI', 'count': 82}, {'date': '2G/4G', 'count': 42}, {'date': 'NO', 'count': 85}], 'deviceThisMonthNum': 4, 'doctorUseNum': 0, 'patientUseNum': 0, 'devicetUseNum': 0, 'notUse30': 89, 'reportNum3': None, 'reportNum6': None, 'reportNum9': None, 'doctorUseNumProportion': 0.0, 'patientUseNumProportion': 0.0, 'devicetUseNumProportion': 0.0, 'complianceVos': None, 'createTime': None, 'isOptimalNum': 0, 'complianceStatisticsVos': None}, 'errCode': 200}
+INFO     test:case.py:11 提取参数字典None
+INFO     test:assert_.py:16 初始断言列表[]
+INFO     test:assert_.py:35 断言表达式新列表：['"200" in "200"', '"True" in "True"']
+INFO     test:case.py:45 -----"sy_agentHomepageList"用例运行完成------

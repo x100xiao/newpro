@@ -1,0 +1,1156 @@
+hzlb_institutions:
+  path: /web-server/api/patientinfo/transfer/institutions
+  method: get
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+userlist_1:
+  path: /web-server/api/patientinfo/patient_do_list
+  method: post
+  remark: 全字段，排序单选
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "patientId": "",
+      "patientName": "",
+      "state": "",
+      "areaPlace": "",
+      "deviceId": "",
+      "useDay": "",
+      "userName": "",
+      "email": "",
+      "orderBy": "addTime",
+      "orderByTwo": "desc",
+      "page": {
+        "currentPage": 1,
+        "showCount": 15
+      },
+      "sqlNames": [ "userName", "patientName", "lastused", "lastUsageH", "deviceId", "addTime", "useDay", "inName", "userId", "sex", "age", "areaPlace", "state", "phone", "email" ]
+    }
+  extract_key:
+  assert_expression:
+    ["'00000' in '$.msg'","'00000' in '$.status'"]
+userNameDESC:
+  path: /web-server/api/patientinfo/patient_do_list
+  method: post
+  remark: 患者账号降序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "orderBy": "userName",
+      "orderByTwo": "desc",
+      "page": {
+        "currentPage": 1,
+        "showCount": 15
+      },
+      "sqlNames": [ "userName", "userId", "sex", "age", "areaPlace", "doctorName", "type"]
+    }
+  extract_key:
+  assert_expression:
+    ["'00000' in '$.msg'","'00000' in '$.status'"]
+userNameASC:
+  path: /web-server/api/patientinfo/patient_do_list
+  method: post
+  remark: 患者账号升序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "orderBy": "userName",
+      "orderByTwo": "asc",
+      "page": {
+        "currentPage": 1,
+        "showCount": 15
+      },
+      "sqlNames": [ "userName", "userId", "sex", "age", "areaPlace", "doctorName", "type"]
+    }
+  extract_key:
+  assert_expression:
+    ["'00000' in '$.msg'","'00000' in '$.status'"]
+patientId_DESC:
+  path: /web-server/api/patientinfo/patient_do_list
+  method: post
+  remark: 患者编号降序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "orderBy": "patientId",
+      "orderByTwo": "desc",
+      "page": {
+        "currentPage": 1,
+        "showCount": 15
+      },
+      "sqlNames": [ "userName", "userId", "sex", "age", "areaPlace", "doctorName", "type"]
+    }
+  extract_key:
+  assert_expression:
+    ["'00000' in '$.msg'","'00000' in '$.status'"]
+patientIdASC:
+  path: /web-server/api/patientinfo/patient_do_list
+  method: post
+  remark: 患者编号升序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "orderBy": "patientId",
+      "orderByTwo": "asc",
+      "page": {
+        "currentPage": 1,
+        "showCount": 15
+      },
+      "sqlNames": [ "userName", "userId", "sex", "age", "areaPlace", "doctorName", "type"]
+    }
+  extract_key:
+  assert_expression:
+    ["'00000' in '$.msg'","'00000' in '$.status'"]
+firstNameDESC:
+  path: /web-server/api/patientinfo/patient_do_list
+  method: post
+  remark: 患者姓名降序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "orderBy": "firstName",
+      "orderByTwo": "desc",
+      "page": {
+        "currentPage": 1,
+        "showCount": 15
+      },
+      "sqlNames": [ "userName", "patientName", "userId", "sex", "age", "areaPlace" ]
+    }
+  extract_key:
+  assert_expression:
+    ["'00000' in '$.msg'","'00000' in '$.status'"]
+firstNameASC:
+  path: /web-server/api/patientinfo/patient_do_list
+  method: post
+  remark: 患者姓名升序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "orderBy": "firstName",
+      "orderByTwo": "asc",
+      "page": {
+        "currentPage": 1,
+        "showCount": 15
+      },
+      "sqlNames": [ "userName", "patientName", "userId", "sex", "age", "areaPlace" ]
+    }
+  extract_key:
+  assert_expression:
+    ["'00000' in '$.msg'","'00000' in '$.status'"]
+birthDESC:
+  path: /web-server/api/patientinfo/patient_do_list
+  method: post
+  remark: 出生日期降序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "orderBy": "birth",
+      "orderByTwo": "desc",
+      "page": {
+        "currentPage": 1,
+        "showCount": 15
+      },
+      "sqlNames": [ "userId", "sex", "age", "areaPlace", "doctorName", "type", "phone", "email"]
+    }
+  extract_key:
+  assert_expression:
+    ["'00000' in '$.msg'","'00000' in '$.status'"]
+birthASC:
+  path: /web-server/api/patientinfo/patient_do_list
+  method: post
+  remark: 出生日期升序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "orderBy": "birth",
+      "orderByTwo": "asc",
+      "page": {
+        "currentPage": 1,
+        "showCount": 15
+      },
+      "sqlNames": [ "userId", "sex", "age", "areaPlace", "doctorName", "type", "phone", "email"]
+    }
+  extract_key:
+  assert_expression:
+    ["'00000' in '$.msg'","'00000' in '$.status'"]
+addTimeDESC:
+  path: /web-server/api/patientinfo/patient_do_list
+  method: post
+  remark: 注册时间降序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "orderBy": "addTime",
+      "orderByTwo": "desc",
+      "page": {
+        "currentPage": 1,
+        "showCount": 15
+      },
+      "sqlNames": [ "userName","addTime", "useDay", "inName", "userId", "type", "phone", "email" ]
+    }
+  extract_key:
+  assert_expression:
+    ["'00000' in '$.msg'","'00000' in '$.status'"]
+addTimeASC:
+  path: /web-server/api/patientinfo/patient_do_list
+  method: post
+  remark: 注册时间升序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "orderBy": "addTime",
+      "orderByTwo": "asc",
+      "page": {
+        "currentPage": 1,
+        "showCount": 15
+      },
+      "sqlNames": [ "userName","addTime", "useDay", "inName", "userId", "type", "phone", "email" ]
+    }
+  extract_key:
+  assert_expression:
+    ["'00000' in '$.msg'","'00000' in '$.status'"]
+pd_listall:
+  path: /web-server/api/patientinfo/patient_do_list
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "patientId": "2",
+      "patientName": "3",
+      "doctorName": "4",
+      "areaPlace": 43,
+      "deviceId": "5",
+      "type": "iBreeze 20C",
+      "useDay": "30",
+      "userName": "1",
+      "email": "6",
+      "notUseDay": "7",
+      "page": {
+        "currentPage": 1,
+        "showCount": 15
+      },
+      "sqlNames": [ "patientName", "userId", "userName", "notUseDay", "email", "useDay", "inName", "doctorName", "type", "areaPlace", "deviceId" ]
+    }
+  extract_key:
+  assert_expression:
+    ["'00000' in '$.msg'","'00000' in '$.status'"]
+userlist:
+  path: /web-server/api/patientinfo/patient_do_list
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "patientName": "1",
+      "orderBy": "userName","orderByTwo": "asc",
+      "page": { "currentPage": 1,"showCount": 15 },
+      "sqlNames": [ "userName","patientName","lastused","lastUsageH","deviceId","addTime","inName" ]
+    }
+  extract_key:
+  assert_expression:
+    ["'00000' in '$.msg'","'00000' in '$.status'"]
+getinstitutionID:
+  path: /web-server/api/user/insListListAll
+  method: post
+  remark: 搜索
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"page":{"currentPage":1,"showCount":15}}
+  extract_key:
+    jgid: $.data.data[0].userId
+    jgname: $.data.data[0].userName
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+newp_doctor:
+  path: /web-server/api/patientDoctorInfo/doctorList
+  method: post
+  remark: 获取新增患者对应的医生
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"institutionId":"$.jgid"}
+  extract_key:
+    dctid: $.data[0].doctorId
+    dctzn: $.data[0].doctorNameZh
+    dcten: $.data[0].doctorNameEn
+    dctun: $.data[0].doctorUsername
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+newuser:
+  path: /web-server/api/patientinfo/editPatienAdd
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"userName":"newhuanz","password":"huanz123","firstName":"huan","lastName":"者","sex":"Female","birth":"2000-01-01",
+         "age":22,"setupDate":"2022-12-30","phone":"1316768687456856","cellPhone":"188192929292992","email":"2432352@qq.com",
+         "confirmMethod":"email","confirmTime":"random_time()","deviceId":"","type":"","timeZone":"America/Adak",
+         "country":"United States","institutionId":"$.jgid","privacy_status":"","treatingDoctorId":"","height":166,
+         "weight":"66","title":"MS","bz":"666","street":"666","maskType":"FullFace","checkMedical":"1d-",
+         "insuranceCompany":"6666","polictNumber":"6666","payer":"6666","doctorDataList":
+           [{"id":null,"addTime":null,"patientId":null,"doctorId":$.dctid,"institutionId":null,"doctorType":"1",
+             "isInsCreate":true,"isInsDel":null,"doctorNameZh":"$.dctzn","doctorNameEn":"$.dcten",
+             "doctorUsername":"$.dctun"}],"inName":"$.jgname","institutuinId":"$.jgid","institutionName":"$.jgname",
+         "userType":1}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+getuserID:
+  path: /web-server/api/patientinfo/patient_do_list
+  method: post
+  remark: 获取患者ID
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {"orderBy":"addTime","orderByTwo":"desc","page":{"currentPage":1,"showCount":15},
+     "sqlNames":["userName", "patientName", "lastused", "lastUsageH", "deviceId", "addTime", "useDay", "inName", "email"]}
+  extract_key:
+    hzid: $.data.data[0].patientId
+    hzyx: $.data.data[0].email
+  assert_expression:
+    ["'00000' in '$.msg'","'00000' in '$.status'"]
+sendnamepwd:
+  path: /web-server/api/user/sendMailPwd?userId=$.hzid&email=$.hzyx
+  method: get
+  remark: 发送账密邮件
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+updatapwd:
+  path: /web-server/api/patientinfo/resetPwdUser?userId=$.hzid
+  method: get
+  remark: 重置密码
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+edituser:
+  path: /web-server/api/patientinfo/editUpdate
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"patientName":"huan者","sex":"Female","gender":"Female","birth":"2000-01-01","phone":"1314546789854376","cellPhone":"188192929292993",
+         "email":"2432352@qq.comq","deviceId":"","type":"","setupDate":"2022-12-30","doctorName":"","institutionName":"$.jgname",
+         "country":"United States","timeZone":"America/Adak","street":"666","height":"166","weight":"66","title":"MS","bz":"666",
+         "maskType":"FullFace","patientHealthInfoListL":[{"name":"Obstructive Sleep Apnea Hypopnea Syndrome (OSAHS)",
+        "translation":"阻塞性睡眠呼吸暂停低通气综合征","shorthand":"OSAHS","medicalId":"1"}],"insuranceCompany":"6666",
+         "polictNumber":"6666","payer":"","firstName":"huan1","lastName":"者1","age":"22","institutuinId":"$.jgid",
+         "treatingDoctorId":"","userName":"newhuanz","userId":"$.hzid","lastUsed":"","lastUsage":"","areaName":"",
+         "fromTime":"","startTime":"","clientState":"","doctorDataList":[{"id":null,"addTime":"random_time()",
+        "patientId":$.hzid,"doctorId":$.dctid,"institutionId":$.jgid,"doctorType":1,"isInsCreate":true,
+        "isInsDel":null,"doctorNameZh":"$.dctzn","doctorNameEn":"$.dcten","doctorUsername":null}],"ventmode":"",
+         "institutionId":"$.jgid","inName":"$.jgname","checkMedical":"1d-","confirmMethod":"email",
+         "confirmTime":"random_time()"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_getMsgCount:
+  path: /web-server/api/patientinfo/getMsgCount
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"state":false}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_institutionTree:
+  path: /web-server/api/user/institutionTree
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {}
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"00000" in "$.status"']
+hzlb_institutionList:
+  path: /web-server/api/user/institutionList
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"userId":"$.jgid","deviceId":"","instiutionNameq":""}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_listAllUse:
+  path: /web-server/api/soft/listAllUse
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {}
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"00000" in "$.status"']
+hzlb_search:
+  path: /web-server/api/device/update/search
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"type":2,"name":"","svn":"","status":2,"page":{"showCount":15,"currentPage":1}}
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"00000" in "$.status"']
+hzlb_insListListAll:
+  path: /web-server/api/user/insListListAll
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_selAllRoleAndArea:
+  path: /web-server/api/areaPersonnel/selAllRoleAndArea
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_departmentList:
+  path: /web-server/api/device/departmentList
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_countryList:
+  path: /web-server/api/patientinfo/countryList
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_agentGoAdd:
+  path: /web-server/api/patientinfo/agentGoAdd
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"timeZone":"Asia/Shanghai"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_snSelListAll:
+  path: /web-server/api/device/snSelListAll
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"userId":'$.jgid',"deviceId":"","page":{"showCount":50,"currentPage":1}}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_daochu:
+  path: /web-server/api/export/patient/toDown
+  method: post
+  remark: 选择要导出的内容
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "deviceId": "G",
+      "page": {
+        "currentPage": 1,
+        "showCount": 15
+      },
+      "sqlNames": [ "userName", "patientName", "lastused", "lastUsageH", "deviceId", "addTime", "inName", "userId", "sex", "age", "doctorName", "type", "areaPlace", "state", "phone" ],
+      "isCancel": "0"
+    }
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_daochu2:
+  path: /web-server/api/export/patient/toDown
+  method: post
+  remark: 确认导出（导出进度百分比）
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+    {
+      "deviceId": "G",
+      "page": {
+        "currentPage": 1,
+        "showCount": 15
+      },
+      "sqlNames": [ "userName", "patientName", "lastused", "lastUsageH", "deviceId", "addTime", "inName", "userId", "sex", "age", "doctorName", "type", "areaPlace", "state", "phone" ],
+      "isCancel": "0"
+    }
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_daochu3:
+  path: /web-server/api/export/doDown?isDown=1&type=5
+  method: post
+  remark: 导出的内容非json格式
+  is_run: false
+  precondition_sql:
+  # 前置sql
+  data:
+  extract_key:
+  assert_expression:
+
+hzlb_exportTemplateList:
+  path: /web-server/api/patientReport/exportTemplateList
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"setupDate":"","setupDateTwo":"","startTime":"","startTimeTwo":"","deviceId":"","userId":"","limitNum":20}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_exportTemplate:
+  path: /web-server/api/exportpatientController/exportTemplate
+  method: post
+  remark: 导出的内容非json格式
+  is_run: false
+  precondition_sql:
+  # 前置sql
+  data: [{"userId":"$.hzid","startTime":"2022-04-18","startTimeTwo":"2022-04-24"}]
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_uploadlist:
+  path: /web-server/api/treatment/data/upload/list
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"patientId":"","page":{"currentPage":1,"showCount":10},"keyword":""}
+  extract_key:
+    sjsn: $.data.data[0].deviceId
+    sjid: $.data.data[0].patientId
+    sjtm: $.data.data[0].times
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_sdProgress:
+  path: /web-server/api/treatment/data/upload/sdProgress
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"deviceIds":"GB-2B004519#4294967"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_detail:
+  path: /web-server/api/treatment/data/upload/detail
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"times":"$.sjtm","deviceId":"$.sjsn","patientId":"$.sjid","queryType":1}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_detailxq:
+  path: /web-server/api/treatment/data/upload/detail
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"times":"$.sjtm","deviceId":"$.sjsn","patientId":"$.sjid","queryType":0}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_verify:
+  path: /web-server/api/treatment/data/upload/verify
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"deviceId":"$.sjsn","sync":0}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_qr_verify:
+  path: /web-server/api/treatment/data/upload/verify
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"deviceId":"$.sjsn","sync":1}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_upload:
+  path: /web-server/api/treatment/data/upload
+  method: post
+  remark: 数据过于复杂
+  is_run: false
+  precondition_sql:
+  # 前置sql
+#  data: {"deviceId":"$.sjsn","prescriptionTime":"1476295610","times":1664355888000,"settings":[{"RCare":0,"TI":100,"TICtrl":0,"TIMax":200,"TIMin":30,"F":12,"AutoF":0,"RiseTime":200,"Trigger":3,"ITrigger":3,"ETrigger":3,"Vt":0,"PressAdjust":2,"VentMode":4,"FastParam":0}]}
+  data: {
+    "deviceId": "$.sjsn",
+    "prescriptionTime": "1602526010",
+    "times": 1662739200000,
+    "settings": [ {
+      "RCare": 0,
+      "TI": 100,
+      "TICtrl": 0,
+      "TIMax": 200,
+      "TIMin": 30,
+      "F": 12,
+      "AutoF": 0,
+      "RiseTime": 200,
+      "Trigger": 3,
+      "ITrigger": 3,
+      "ETrigger": 3,
+      "Vt": 0,
+      "PressAdjust": 2,
+      "VentMode": 4,
+      "FastParam": 0
+    } ]
+  }
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_upload2:
+  path: /web-server/api/treatment/data/upload
+  method: post
+  remark: 数据过于复杂
+  is_run: false
+  precondition_sql:
+  # 前置sql
+  data: {"deviceId":"$.sjsn","startTime":1643707033,"endTime":1643707555,"times":1662739200000,"stats":[{"ventid":1,"secStart":1643707033,"secUsed":522,"secHumid":0,"timePB":0,"cntAHI":4,"cntOAI":0,"cntCAI":0,"cntAI":0,"cntHI":4,"cntRERA":0,"cntSNI":0,"VentMode":4,"cntBreath":306,"cntSelfBreath":0}],"statsAll":[{"VentId":1,"secStart":1643707033,"secUsed":563,"secHumid":0,"timePB":0,"cntAHI":4,"cntOAI":0,"cntCAI":0,"cntAI":0,"cntHI":4,"cntRERA":0,"cntSNI":0,"VentMode":4,"cntBreath":306,"cntSelfBreath":0,"medPress":3,"medIPAP":3.2,"medEPAP":2.8,"medLEAK":0,"medVt":50,"medMV":1.2,"medRR":14,"medTi":1.1,"medIE":1.93,"minSpo2":0,"minPR":0,"p95Press":4.4,"p95IPAP":4.4,"p95EPAP":3.2,"p95LEAK":0,"p95Vt":260,"p95MV":5.1,"p95RR":60,"p95Ti":3.9,"p95IE":2.99,"avgSpo2":0,"avgPR":0,"maxPress":4.6,"maxIPAP":4.6,"maxEPAP":3.3,"maxLEAK":0,"maxVt":480,"maxMV":11.7,"maxRR":60,"maxTi":3.9,"maxIE":2.99,"maxSpo2":0,"maxPR":0}],"alarm":[],"event":[{"ventid":1,"ID":19,"DT":1643707048,"DR":17,"GD":0},{"ventid":1,"ID":20,"DT":1643707177,"DR":4,"GD":0},{"ventid":1,"ID":19,"DT":1643707168,"DR":22,"GD":0},{"ventid":1,"ID":20,"DT":1643707261,"DR":4,"GD":0},{"ventid":1,"ID":20,"DT":1643707268,"DR":1,"GD":0},{"ventid":1,"ID":20,"DT":1643707276,"DR":2,"GD":0},{"ventid":1,"ID":20,"DT":1643707296,"DR":0,"GD":0},{"ventid":1,"ID":20,"DT":1643707302,"DR":1,"GD":0},{"ventid":1,"ID":20,"DT":1643707309,"DR":1,"GD":0},{"ventid":1,"ID":19,"DT":1643707374,"DR":152,"GD":0},{"ventid":1,"ID":20,"DT":1643707547,"DR":3,"GD":0},{"ventid":1,"ID":19,"DT":1643707541,"DR":12,"GD":0},{"ventid":1,"ID":20,"DT":1643707555,"DR":2,"GD":0}],"monitor":[{"Press":"3,3.45,4.28,4.17,3,3,3.29,3,3,3,3,3.49,4.21,3.4,4.26,3.72,4.25,4.28,4.13,4.4,3.32,4.4,4.4,3.89,4.25,3.12,4.25,4.26,4.4,4.4","IPAP":"3.33,3.33,3.14,3.14,3.39,3.08,3.08,2.86,2.86,2.85,2.85,2.84,2.84,4.09,3.38,4.2,3.38,3.38,4.17,4.17,4.66,3.42,3.42,3.4,3.4,4.42,3.36,3.36,4.15,4.15","EPAP":"2.83,2.83,2.96,2.96,2.82,2.97,2.97,3.26,3.26,3.29,3.29,2.96,2.96,2.91,2.99,2.99,2.99,2.99,2.9,2.9,2.75,2.93,2.93,2.94,2.94,2.83,3,3,2.91,2.91","Leak":"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0","Vt":"481,481,4,4,82,57,57,23,23,30,30,54,54,97,21,267,24,24,290,290,89,89,89,146,146,119,43,43,360,360","MV":"5.67,5.67,0.65,0.65,1,2.91,2.91,0.94,0.94,0.53,0.53,0.84,0.84,1.33,1.74,4.12,1.95,1.95,4.17,4.17,1.17,1.17,1.17,1.74,1.74,1.42,4.23,4.23,5.12,5.12","RR":"12,12,60,60,12,51,51,40,40,18,18,15,15,14,60,15,60,60,14,14,13,13,13,12,12,12,60,60,14,14","Ti":"3.99,3.99,0.11,0.11,3.99,0.86,0.86,0.77,0.77,0.63,0.63,3.14,3.14,3.65,0.3,3.45,0.3,0.3,3.74,3.74,3.99,3.99,3.99,3.99,3.99,3.99,0.28,0.28,3.91,3.91","I:E":"2.99,2.99,0.38,0.38,2.99,2.79,2.79,1.07,1.07,0.23,0.23,2.99,2.99,2.99,0.69,2.99,0.67,0.67,2.99,2.99,2.99,2.99,2.99,2.99,2.99,2.99,0.87,0.87,2.99,2.99","SpO2":"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0","PR":"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0","ventid":1,"rate":0.5,"collect_num":30,"timestamp":1643707033},{"Press":"3,4.23,3,4.4,4.4,4.13,4.4,3.36,4.3,4.38,3.87,4.21,3.49,4.4,3,4.4,4.4,3.12,4.24,3,4.26,4.19,4.4,4.4,3,4.4,4.4,4.05,4.22,3.56","IPAP":"3.36,3.36,4.21,4.21,4.21,3.43,3.43,4.65,3.41,3.41,3.37,3.37,4.13,4.13,4.69,3.44,3.44,3.42,3.42,4.08,3.37,3.37,4.09,4.09,3.43,3.43,3.43,3.39,3.39,4.07","EPAP":"2.8,2.99,2.99,2.91,2.91,2.92,2.92,2.79,2.94,2.94,2.98,2.98,2.9,2.9,2.9,2.92,2.92,2.94,2.94,2.94,2.99,2.99,2.91,2.91,2.76,2.93,2.93,3,3,2.82","Leak":"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0","Vt":"42,42,284,284,284,58,58,332,50,50,42,42,252,252,64,58,58,50,50,264,42,42,241,241,58,58,58,49,49,256","MV":"4.23,4.23,4.05,4.05,4.05,5.92,5.92,4.45,5.05,5.05,3.35,3.35,3.6,3.6,0.84,5.86,5.86,4.91,4.91,3.75,3.33,3.33,3.45,3.45,5.83,5.83,5.83,4.82,4.82,3.65","RR":"60,60,14,14,14,60,60,13,60,60,60,60,14,14,13,60,60,60,60,14,60,60,14,14,60,60,60,60,60,14","Ti":"0.29,0.29,3.86,3.86,3.86,0.28,0.28,3.99,0.29,0.29,0.3,0.3,3.85,3.85,3.99,0.3,0.3,0.3,0.3,3.91,0.3,0.3,3.85,3.85,0.3,0.3,0.3,0.3,0.3,3.9","I:E":"0.95,0.95,2.99,2.99,2.99,0.96,0.96,2.99,0.98,0.98,0.67,0.67,2.99,2.99,2.99,0.99,0.99,0.99,0.99,2.99,0.67,0.67,2.99,2.99,0.98,0.98,0.98,0.98,0.98,2.99","SpO2":"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0","PR":"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0","ventid":1,"rate":0.5,"collect_num":30,"timestamp":1643707093},{"Press":"3.18,3,3,3,3,3,3,3,3,3.91,4.09,3.07,4.4,3.8,4.4,4.4,4.4,4.4,3.98,4.4,3.13,4.4,3.39,4.4,4.4,4.4,4.4,4.05,4.4,3.18","IPAP":"3.49,3.49,3.49,2.83,2.83,2.85,2.85,2.83,2.83,2.83,2.83,4.11,4.11,4.38,4.38,4.38,4.38,4.38,4.4,4.4,4.38,4.38,4.38,4.38,4.38,4.38,4.38,4.4,4.4,4.38","EPAP":"2.79,2.79,2.79,3.16,3.16,3.31,3.31,3.29,3.29,3.24,3.24,2.87,2.87,2.87,2.83,2.83,2.83,2.83,2.83,2.83,2.82,2.82,2.82,2.83,2.83,2.83,2.83,2.83,2.83,2.83","Leak":"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0","Vt":"67,55,55,262,262,262,262,36,36,36,36,82,82,82,82,82,87,87,90,90,91,91,91,87,87,98,98,90,90,92","MV":"3.73,2.84,2.84,3.93,3.93,3.93,3.93,0.25,0.25,0.25,0.25,0.57,0.57,0.57,1.09,1.09,1.15,1.15,1.21,1.21,1.22,1.22,1.22,1.17,1.17,1.32,1.32,1.2,1.2,1.23","RR":"55,51,51,15,15,15,15,7,7,7,7,7,7,7,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13","Ti":"0.73,0.77,0.77,3.69,3.69,3.69,3.69,3.99,3.99,3.99,3.99,3.99,3.99,3.99,3.99,3.99,3.99,3.99,3.99,3.99,3.99,3.99,3.99,3.99,3.99,3.99,3.99,3.99,3.99,3.99","I:E":"2.09,1.93,1.93,2.99,2.99,2.99,2.99,1.06,1.06,1.06,1.06,0.97,0.97,0.97,2.99,2.99,2.99,2.99,2.99,2.99,2.99,2.99,2.99,2.99,2.99,2.99,2.99,2.99,2.99,2.99","SpO2":"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0","PR":"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0","ventid":1,"rate":0.5,"collect_num":30,"timestamp":1643707153},{"Press":"4.4,3.13,4.4,4.4,4.4,4.4,4.09,4.4,3.23,4.11,4.4,3.25,4.4,3,4.4,4.4,4.4,4.4,4.18,4.4,3.32,4.4,3,3,4.17,4.34,4.26,3,3,3","IPAP":"4.38,4.38,4.38,4.38,4.38,4.38,4.38,4.38,4.38,4.43,4.43,4.38,4.38,4.4,4.4,4.4,4.38,4.38,4.38,4.38,4.38,4.38,4.38,3.24,3.24,3.24,3.2,4.38,3.09,3.09","EPAP":"2.83,2.83,2.83,2.83,2.83,2.83,2.83,2.83,2.83,2.86,2.86,2.83,2.83,2.83,2.83,2.83,2.83,2.83,2.83,2.83,2.83,2.83,2.83,2.83,2.92,2.92,2.87,2.87,2.98,2.98","Leak":"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0","Vt":"92,92,86,86,92,92,89,89,97,65,65,116,116,113,113,113,95,95,89,89,95,95,93,156,156,156,387,69,33,33","MV":"1.23,1.23,1.14,1.14,1.23,1.23,1.19,1.19,1.29,2.85,2.85,1.51,1.51,1.51,1.51,1.51,1.28,1.28,1.19,1.19,1.28,1.28,1.24,11.72,11.72,11.72,4.76,2.72,2,2","RR":"13,13,13,13,13,13,13,13,13,44,44,13,13,13,13,13,13,13,13,13,13,13,13,60,60,60,12,39,59,59","Ti":"3.99,3.99,3.99,3.99,3.99,3.99,3.99,3.99,3.99,1.02,1.02,3.99,3.99,3.99,3.99,3.99,3.99,3.99,3.99,3.99,3.99,3.99,3.99,0.37,0.37,0.37,3.99,1.11,0.59,0.59","I:E":"2.99,2.99,2.99,2.99,2.99,2.99,2.99,2.99,2.99,2.97,2.97,2.99,2.99,2.99,2.99,2.99,2.99,2.99,2.99,2.99,2.99,2.99,2.99,0.88,0.88,0.88,2.99,2.68,1.4,1.4","SpO2":"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0","PR":"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0","ventid":1,"rate":0.5,"collect_num":30,"timestamp":1643707213},{"Press":"4.28,3.23,3,3,3,4.24,4.48,3,3,3,4.17,3,3,3.14,3,3,3,3,3,3,4.29,4.22,4.26,3,4.17,3.07,3,3,4.4,4.4","IPAP":"2.83,3.99,3.3,3.08,2.84,2.84,2.84,4.4,3.29,3.29,2.84,3.08,3.08,3.17,3.29,3.1,2.85,4.36,3.07,3.07,2.84,2.84,4.24,3.1,3.1,3.35,3.35,3.35,3.17,3.17","EPAP":"2.92,2.85,2.86,3,3.25,2.93,2.93,2.93,2.85,2.85,2.93,2.99,2.99,2.92,2.87,2.98,3.16,2.94,2.98,2.98,2.93,2.93,2.92,2.99,2.96,2.8,2.8,2.8,2.93,2.93","Leak":"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0","Vt":"164,41,33,33,150,150,150,45,32,32,164,26,26,152,25,25,166,39,25,25,153,153,53,34,34,203,203,203,73,73","MV":"2.57,2.23,1.98,1.98,2.35,2.35,2.35,1.78,1.9,1.9,2.57,1.59,1.59,2.36,1.58,1.58,2.58,1.34,1.52,1.52,2.39,2.39,0.73,2.04,2.04,3.12,3.12,3.12,0.86,0.86","RR":"16,53,59,59,16,16,16,39,58,58,16,60,60,15,60,60,15,34,60,60,16,16,14,60,60,15,15,15,12,12","Ti":"3.14,0.7,0.59,0.59,3.06,3.06,3.06,1.11,0.61,0.61,3.21,0.56,0.56,3.15,0.56,0.56,3.17,1.12,0.57,0.57,3.04,3.04,3.72,0.57,0.57,3.14,3.14,3.14,3.99,3.99","I:E":"2.99,1.67,1.41,1.41,2.99,2.99,2.99,2.67,1.43,1.43,2.99,1.31,1.31,2.99,1.33,1.33,2.99,1.76,1.36,1.36,2.99,2.99,2.99,1.36,1.36,2.99,2.99,2.99,2.99,2.99","SpO2":"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0","PR":"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0","ventid":1,"rate":0.5,"collect_num":30,"timestamp":1643707273},{"Press":"4.4,3,3,3.38,4.2,3.2,3,3,3,4.25,4.68,3,3,3,4.13,4.2,3.97,3,3,3,3,3,3,2.87,3,3,3,3,3,3","IPAP":"4.25,3.31,3.31,2.84,2.84,4.29,3.3,3.3,3.3,3.18,3.18,4.38,3.3,3.3,3.18,3.18,4.16,3.08,3.08,2.84,2.84,2.84,3.24,3.24,3.24,3.24,3.25,3.25,3.24,3.24","EPAP":"2.93,2.84,2.84,2.93,2.93,2.93,2.84,2.84,2.84,2.92,2.92,2.94,2.84,2.84,2.92,2.92,2.93,2.98,2.98,3.26,3.26,3.26,2.85,2.85,2.87,2.87,2.87,2.87,2.87,2.87","Leak":"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0","Vt":"101,43,43,71,71,79,42,42,70,70,70,42,42,42,68,68,78,31,31,190,19,19,30,30,30,30,33,33,32,32","MV":"1.39,1.7,1.7,0.88,0.88,1.09,1.65,1.65,0.87,0.87,0.87,1.67,1.67,1.67,0.84,0.84,1.07,1.87,1.87,2.96,0.88,0.88,0.53,0.53,0.42,0.42,0.45,0.45,0.44,0.44","RR":"14,39,39,12,12,14,39,39,12,12,12,39,39,39,12,12,14,59,59,16,45,45,17,17,14,14,14,14,14,14","Ti":"3.67,1.1,1.1,3.99,3.99,3.72,1.11,1.11,3.99,3.99,3.99,1.11,1.11,1.11,3.99,3.99,3.71,0.58,0.58,3.15,0.7,0.7,0.56,0.56,0.56,0.56,0.56,0.56,0.57,0.57","I:E":"2.99,2.61,2.61,2.99,2.99,2.99,2.61,2.61,2.99,2.99,2.99,2.64,2.64,2.64,2.99,2.99,2.99,1.36,1.36,2.99,1.08,1.08,0.19,0.19,0.14,0.14,0.14,0.14,0.15,0.15","SpO2":"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0","PR":"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0","ventid":1,"rate":0.5,"collect_num":30,"timestamp":1643707333},{"Press":"3,3,3,3,3,3,3,3,3,3,3,3,3,3.36,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3.49,3","IPAP":"3.24,3.24,2.83,3.11,3.11,3.23,3.23,3.26,3.26,3.24,3.24,3.24,3.24,3.24,3.23,3.23,3.24,3.24,3.24,3.24,3.24,3.24,3.25,3.25,3.25,3.25,3.25,3.24,3.24,3.24","EPAP":"2.87,2.87,3.29,2.93,2.93,2.96,2.96,2.87,2.87,2.86,2.86,2.86,2.86,2.88,2.88,2.88,2.87,2.87,2.87,2.87,2.87,2.87,2.86,2.86,2.87,2.87,2.87,2.87,2.87,2.87","Leak":"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0","Vt":"30,30,30,27,27,30,30,31,31,33,33,31,31,32,32,32,31,31,31,31,31,31,31,31,32,32,32,32,32,33","MV":"0.42,0.42,0.42,0.37,0.37,0.42,0.42,0.43,0.43,0.45,0.45,0.42,0.42,0.44,0.44,0.44,0.42,0.42,0.43,0.43,0.43,0.43,0.43,0.43,0.44,0.44,0.44,0.45,0.45,0.45","RR":"14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14","Ti":"0.56,0.56,0.56,0.55,0.55,0.56,0.56,0.56,0.56,0.56,0.56,0.56,0.56,0.56,0.56,0.56,0.56,0.56,0.57,0.57,0.56,0.56,0.56,0.56,0.56,0.56,0.56,0.56,0.56,0.56","I:E":"0.14,0.14,0.14,0.14,0.14,0.14,0.14,0.14,0.14,0.14,0.14,0.14,0.14,0.14,0.14,0.14,0.14,0.14,0.15,0.15,0.14,0.14,0.14,0.14,0.14,0.14,0.14,0.15,0.15,0.14","SpO2":"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0","PR":"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0","ventid":1,"rate":0.5,"collect_num":30,"timestamp":1643707393},{"Press":"3,3,3,3,3,3,3,3.03,3,2.65,3,3,3,3,3,3,3,3,3.18,3,3,3,3,3,3,3.87,4.21,3.73,3,3","IPAP":"3.24,3.23,3.23,3.24,3.24,3.25,3.25,3.25,3.24,3.24,3.24,3.24,3.24,3.24,3.24,3.24,3.25,3.25,3.25,3.22,3.22,3.26,3.26,2.83,2.83,3.18,3.18,4.18,3.29,3.29","EPAP":"2.87,2.87,2.87,2.87,2.87,2.87,2.87,2.87,2.87,2.87,2.87,2.87,2.88,2.88,2.87,2.87,2.86,2.86,2.87,2.87,2.87,2.86,2.86,3.29,3.29,2.92,2.92,2.92,2.85,2.85","Leak":"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0","Vt":"33,33,33,31,31,31,31,31,31,31,31,31,32,32,33,33,31,31,31,31,31,32,32,25,25,39,39,56,46,46","MV":"0.45,0.45,0.45,0.43,0.43,0.43,0.43,0.43,0.43,0.43,0.43,0.43,0.43,0.43,0.46,0.46,0.43,0.43,0.43,0.43,0.43,0.44,0.44,0.35,0.35,0.6,0.6,0.77,1.83,1.83","RR":"14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,15,15,14,39,39","Ti":"0.56,0.57,0.57,0.56,0.56,0.56,0.56,0.56,0.56,0.56,0.56,0.56,0.57,0.57,0.57,0.57,0.56,0.56,0.56,0.56,0.56,0.56,0.56,0.54,0.54,3.25,3.25,3.7,1.1,1.1","I:E":"0.14,0.15,0.15,0.14,0.14,0.14,0.14,0.14,0.14,0.14,0.14,0.14,0.15,0.15,0.15,0.15,0.14,0.14,0.14,0.14,0.14,0.14,0.14,0.14,0.14,2.99,2.99,2.99,2.63,2.63","SpO2":"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0","PR":"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0","ventid":1,"rate":0.5,"collect_num":30,"timestamp":1643707453},{"Press":"3,4.19,3.35,3.16,3,3,4.23,4.23,4.4,3,3,3,3,3,3,3,3,3,3,3,3.34,4.4,3,3,3.71,4.23,3.51,3,3,3","IPAP":"3.17,3.17,4.18,4.41,3.09,3.09,2.84,2.84,4.26,3.08,3.08,2.86,2.86,2.84,2.84,2.84,4.2,3.28,3.09,2.84,4.33,4,3.08,3.08,2.86,2.86,4.34,3.31,3.31,2.85","EPAP":"2.86,2.93,2.93,2.84,2.98,2.98,2.93,2.93,2.92,2.98,2.98,3.2,3.2,3.3,3.3,3.3,2.92,2.85,2.99,3.2,2.87,2.86,2.99,2.99,2.94,2.94,2.94,2.84,2.84,3.3","Leak":"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0","Vt":"70,70,71,44,33,33,174,174,53,31,31,180,180,55,55,46,43,36,36,138,39,42,34,34,168,168,51,44,44,87","MV":"0.86,0.86,0.97,1.73,1.92,1.92,2.74,2.74,0.73,1.84,1.84,2.81,2.81,0.76,0.76,0.63,1.44,2.16,2.16,2.17,1.34,2.27,2,2,2.61,2.61,0.7,1.73,1.73,1.08","RR":"12,12,14,39,58,58,16,16,14,59,59,16,16,14,14,14,33,59,59,16,34,53,59,59,16,16,14,39,39,12","Ti":"3.99,3.99,3.71,1.1,0.61,0.61,3.16,3.16,3.71,0.58,0.58,3.16,3.16,3.7,3.7,3.71,1.13,0.59,0.59,3.16,1.12,0.7,0.59,0.59,3.18,3.18,3.72,1.1,1.1,3.99","I:E":"2.99,2.99,2.99,2.58,1.43,1.43,2.99,2.99,2.99,1.37,1.37,2.99,2.99,2.99,2.99,2.99,1.66,1.38,1.38,2.99,1.73,1.64,1.38,1.38,2.99,2.99,2.99,2.61,2.61,2.99","SpO2":"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0","PR":"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0","ventid":1,"rate":0.5,"collect_num":30,"timestamp":1643707513}],"progress":"100"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_zlsj:
+  path: /web-server/api/patientinfo/selPatientInfo?userId=$.hzid
+  method: get
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_vtChart:
+  path: /web-server/api/patientReport/vtChart
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"patientId":"$.hzid","fromDate":"2022-09-22","toDate":"2022-09-28"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_spo2Chart:
+  path: /web-server/api/patientReport/spo2Chart
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"patientId":"$.hzid","fromDate":"2022-09-22","toDate":"2022-09-28"}
+  extract_key:
+  assert_expression:
+    ['"0" in "$.errorCode"']
+hzlb_rrChart:
+  path: /web-server/api/patientReport/rrChart
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"patientId":"$.hzid","fromDate":"2022-09-22","toDate":"2022-09-28"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_prAll:
+  path: /web-server/api/patientReport/prAll
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"patientId":"$.hzid","fromDate":"2022-09-22","toDate":"2022-09-28"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_patientReportShow:
+  path: /web-server/api/patientReport/patientReportShow
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"patientId":"$.hzid","fromDate":"2022-09-22","toDate":"2022-09-28"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_mvChart:
+  path: /web-server/api/patientReport/mvChart
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"patientId":"$.hzid","fromDate":"2022-09-22","toDate":"2022-09-28"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_leakChartAll:
+  path: /web-server/api/patientReport/leakChartAll
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"patientId":"$.hzid","fromDate":"2022-09-22","toDate":"2022-09-28"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_ipapChart:
+  path: /web-server/api/patientReport/ipapChart
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"patientId":"$.hzid","fromDate":"2022-09-22","toDate":"2022-09-28"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_epapChart:
+  path: /web-server/api/patientReport/epapChart
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"patientId":"$.hzid","fromDate":"2022-09-22","toDate":"2022-09-28"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_vtChartyy:
+  path: /web-server/api/patientReport/vtChart
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"patientId":"$.hzid","fromDate":"2022-08-22","toDate":"2022-09-28"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_spo2Chartyy:
+  path: /web-server/api/patientReport/spo2Chart
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"patientId":"$.hzid","fromDate":"2022-08-22","toDate":"2022-09-28"}
+  extract_key:
+  assert_expression:
+    ['"0" in "$.errorCode"']
+hzlb_rrChartyy:
+  path: /web-server/api/patientReport/rrChart
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"patientId":"$.hzid","fromDate":"2022-08-22","toDate":"2022-09-28"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_prAllyy:
+  path: /web-server/api/patientReport/prAll
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"patientId":"$.hzid","fromDate":"2022-08-22","toDate":"2022-09-28"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_patientReportShowyy:
+  path: /web-server/api/patientReport/patientReportShow
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"patientId":"$.hzid","fromDate":"2022-08-22","toDate":"2022-09-28"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_mvChartyy:
+  path: /web-server/api/patientReport/mvChart
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"patientId":"$.hzid","fromDate":"2022-08-22","toDate":"2022-09-28"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_leakChartAllyy:
+  path: /web-server/api/patientReport/leakChartAll
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"patientId":"$.hzid","fromDate":"2022-08-22","toDate":"2022-09-28"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_ipapChartyy:
+  path: /web-server/api/patientReport/ipapChart
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"patientId":"$.hzid","fromDate":"2022-08-22","toDate":"2022-09-28"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_epapChartyy:
+  path: /web-server/api/patientReport/epapChart
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"patientId":"$.hzid","fromDate":"2022-08-22","toDate":"2022-09-28"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_vtChartdd:
+  path: /web-server/api/patientReport/vtChart
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"patientId":"$.hzid","fromDate":"2022-09-28","toDate":"2022-09-28"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_patientReportShowdd:
+  path: /web-server/api/patientReport/patientReportShow
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"patientId":"$.hzid","fromDate":"2022-09-28","toDate":"2022-09-28"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_leakChartAlldd:
+  path: /web-server/api/patientReport/leakChartAll
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"patientId":"$.hzid","fromDate":"2022-09-28","toDate":"2022-09-28"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_ipapChartdd:
+  path: /web-server/api/patientReport/ipapChart
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"patientId":"$.hzid","fromDate":"2022-09-28","toDate":"2022-09-28"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_epapChartdd:
+  path: /web-server/api/patientReport/epapChart
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"patientId":"$.hzid","fromDate":"2022-09-28","toDate":"2022-09-28"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_updelid:
+  path: /web-server/api/treatment/data/upload/list
+  method: post
+  remark: 获取撤销参数
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"patientId":"","page":{"currentPage":1,"showCount":10},"keyword":""}
+  extract_key:
+    dsjsn: $.data.data[0].deviceId
+    dsjid: $.data.data[0].patientId
+    dsjtm: $.data.data[0].times
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_del:
+  path: /web-server/api/treatment/data/upload/del
+  method: post
+  remark: 撤销上传数据
+  is_run: false
+  precondition_sql:
+  data: {"times":"$.dsjtm","deviceId":"$.dsjsn","patientId":"$.dsjid"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_getOptimalReport:
+  path: /web-server/api/patientReport/getOptimalReport?pid=$.hzid
+  method: get
+  remark: 最优30天报告
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_preview:
+  path: /web-server/api/patientReport/preview
+  method: post
+  remark: 生成报告视图
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"deviceId":null,"fromDate":"2022-12-30","toDate":"2023-01-05","patientId":"$.hzid","pageType":"B","dayAddition":"","reportType":"ctr","isMonth":false,"isWeek":false}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_getReportForRedis:
+  path: /web-server/api/patientReport/getReportForRedis
+  method: post
+  remark: 生成报告视图
+  is_run: false
+  precondition_sql:
+  # 前置sql
+  data:
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_getReportForRedis2:
+  path: /web-server/api/patientReport/getReportForRedis
+  method: post
+  remark: 生成报告视图2
+  is_run: false
+  precondition_sql:
+  # 前置sql
+  data: {"key":"31672833245-2022-12-30-2023-01-05","value":""}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_patientClickReport:
+  path: /web-server/api/patientLookLog/patientClickReport?patientId=$.hzid
+  method: get
+  remark: 打印报告
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_getUserDownList:
+  path: /web-server/api/exportPatientAsync/getUserDownList
+  method: post
+  remark: 数据导出列表
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"page":{"currentPage":1,"showCount":10}}
+  extract_key:
+    sj_taskno: $.data.downVOList[0].taskNo
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_asyncDownFile:
+  path: /web-server/api/exportPatientAsync/asyncDownFile?taskNo=$.sj_taskno
+  method: post
+  remark: 下载批量导出报告，返回格式为application/octet-stream
+  is_run: false
+  precondition_sql:
+  # 前置sql
+  data: {}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_exportTemplateList_1:
+  path: /web-server/api/patientReport/exportTemplateList
+  method: post
+  remark: 获取一键导出患者ID,快速导出设备sn
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"deviceId":"","limitNum":0}
+  extract_key:
+    dcid: $.data.data[0].userId
+    dcsn: $.data.data[0].deviceId
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_asyncDelTask:
+  path: /web-server/api/exportPatientAsync/asyncDelTask?taskNo=$.sj_taskno
+  method: post
+  remark: 删除批量导出报告记录
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_addTaskDownOld:
+  path: /web-server/api/exportPatientAsync/addTaskDownOld
+  method: post
+  remark: 选择患者后一键导出
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: [{"userId":"$.dcid","startTime":"2021-03-10","startTimeTwo":"2021-03-16"}]
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_getUserDownList_quxiao:
+  path: /web-server/api/exportPatientAsync/getUserDownList
+  method: post
+  remark: 获取取消导出编号
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"page":{"currentPage":1,"showCount":10}}
+  extract_key:
+    sj_taskno2: $.data.downVOList[0].taskNo
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_asyncDelTask_quxiao:
+  path: /web-server/api/exportPatientAsync/asyncDelTask?taskNo=$.sj_taskno2
+  method: post
+  remark: 取消一键导出
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_exportTemplateList_2:
+  path: /web-server/api/patientReport/exportTemplateList
+  method: post
+  remark: 获取快速导出数量
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"deviceId":"$.dcsn","limitNum":0}
+  extract_key:
+    dcnb: $.data.total
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hzlb_addTaskDown:
+  path: /web-server/api/exportPatientAsync/addTaskDown
+  method: post
+  remark: 患者快速导出
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"deviceId":"$.dcsn","days":"6","limitNum":0,"reportRowsNum":$.dcnb}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+deleteuser:
+  path: /web-server/api/patientinfo/orgDoDel
+  method: post
+  remark: 删除患者
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"userId":"$.hzid","delName":"患者"}
+  extract_key:
+  assert_expression:
+    ['"success" in "$.result"','"Delete Successfully" in "$.msg"']

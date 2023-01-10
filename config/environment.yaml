@@ -1,0 +1,107 @@
+S3:
+  domain_name: s3.resvent.com
+  headers:
+    Accept-Encoding: gzip, deflate, br
+    accept: application/json, text/plain, */*
+    accept-language: zh-CN,zh;q=0.9,fr-FR;q=0.8,fr;q=0.7,pt-PT;q=0.6,pt;q=0.5,en-US;q=0.4,en;q=0.3,es;q=0.2
+    authentication-info: 0c4f2f8d-61da-4cfb-9b84-07e10b73a2f8
+    cache-control: no-cache
+    content-type: application/json
+    language: en
+    mode: cors
+    pragma: no-cache
+    referrerPolicy: strict-origin-when-cross-origin
+    sec-ch-ua: \.Not/A)Brand\;v=\99\, \Google Chrome\;v=\103\, \Chromium\;v=\103\
+    sec-ch-ua-mobile: ?0
+    sec-ch-ua-platform: \Windows\
+    sec-fetch-dest: empty
+    sec-fetch-mode: cors
+    sec-fetch-site: same-origin
+    timefmt: MM-dd-yyyy HH:mm:ss
+    timezone: Asia/Shanghai
+    user-agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like
+      Gecko) Chrome/103.0.0.0 Safari/537.36
+  http: https://
+S4:
+  domain_name: s4.resvent.com
+  headers:
+    Accept-Encoding: gzip, deflate, br
+    accept: application/json, text/plain, */*
+    accept-language: zh-CN,zh;q=0.9,fr-FR;q=0.8,fr;q=0.7,pt-PT;q=0.6,pt;q=0.5,en-US;q=0.4,en;q=0.3,es;q=0.2
+    authentication-info: 6766067d-2706-426b-8fe4-2cf413f5fa43
+    cache-control: no-cache
+    content-type: application/json
+    language: en
+    mode: cors
+    pragma: no-cache
+    referrerPolicy: strict-origin-when-cross-origin
+    sec-ch-ua: \.Not/A)Brand\;v=\99\, \Google Chrome\;v=\103\, \Chromium\;v=\103\
+    sec-ch-ua-mobile: ?0
+    sec-ch-ua-platform: \Windows\
+    sec-fetch-dest: empty
+    sec-fetch-mode: cors
+    sec-fetch-site: same-origin
+    timefmt: MM-dd-yyyy HH:mm:ss
+    timezone: Asia/Shanghai
+    user-agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like
+      Gecko) Chrome/103.0.0.0 Safari/537.36
+  http: https://
+USA:
+  domain_name: usa.resvent.com
+  headers:
+    Accept-Encoding: gzip, deflate, br
+    accept: application/json, text/plain, */*
+    accept-language: zh-CN,zh;q=0.9,fr-FR;q=0.8,fr;q=0.7,pt-PT;q=0.6,pt;q=0.5,en-US;q=0.4,en;q=0.3,es;q=0.2
+    authentication-info: e5ee0db8-dc3c-4a4c-873e-c68722c23ef5
+    cache-control: no-cache
+    content-type: application/json
+    language: en
+    mode: cors
+    pragma: no-cache
+    referrerPolicy: strict-origin-when-cross-origin
+    sec-ch-ua: \.Not/A)Brand\;v=\99\, \Google Chrome\;v=\103\, \Chromium\;v=\103\
+    sec-ch-ua-mobile: ?0
+    sec-ch-ua-platform: \Windows\
+    sec-fetch-dest: empty
+    sec-fetch-mode: cors
+    sec-fetch-site: same-origin
+    timefmt: MM-dd-yyyy HH:mm:ss
+    timezone: Asia/Shanghai
+    user-agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like
+      Gecko) Chrome/103.0.0.0 Safari/537.36
+  http: https://
+uat:
+  domain_name: uat.resvent.com
+  headers:
+    Accept-Encoding: gzip, deflate, br
+    accept: application/json, text/plain, */*
+    accept-language: zh-CN,zh;q=0.9,fr-FR;q=0.8,fr;q=0.7,pt-PT;q=0.6,pt;q=0.5,en-US;q=0.4,en;q=0.3,es;q=0.2
+    authentication-info: 0529e3d0-f067-42c6-be96-b2edbdda1491
+    cache-control: no-cache
+    content-type: application/json
+    language: en
+    mode: cors
+    pragma: no-cache
+    referrerPolicy: strict-origin-when-cross-origin
+    sec-ch-ua: \.Not/A)Brand\;v=\99\, \Google Chrome\;v=\103\, \Chromium\;v=\103\
+    sec-ch-ua-mobile: ?0
+    sec-ch-ua-platform: \Windows\
+    sec-fetch-dest: empty
+    sec-fetch-mode: cors
+    sec-fetch-site: same-origin
+    timefmt: MM-dd-yyyy HH:mm:ss
+    timezone: Asia/Shanghai
+    user-agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like
+      Gecko) Chrome/103.0.0.0 Safari/537.36
+  http: https://
+yufa:
+  domain_name: preusa.resvent.com
+  headers:
+    Accept-Encoding: gzip, deflate, br
+    accept-language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+    authentication-info: 45d9da76-f051-45e1-b15b-81285715af52
+    content-type: application/json
+    language: en
+    user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+      like Gecko) Chrome/104.0.5112.102 Safari/537.36 Edg/104.0.1293.70
+  http: https://

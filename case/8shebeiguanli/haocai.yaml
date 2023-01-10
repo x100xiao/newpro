@@ -1,0 +1,280 @@
+hcconsumableList:
+  path: /web-server/api/device/consumableList
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"patientName":"","deviceId":"","doctorName":"","areaPlace":"","filterReplace":"","tubeReplace":"","maskReplace":"","frameReplace":"","venturiMaskReplace":"","resistanceBandReplace":"","waterTankReplace":"","staffId":"","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+    hcsn: $.data.data[0].deviceId
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hc_consumableList_setupDate_desc:
+  path: /web-server/api/device/consumableList
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"setupDate","orderByTwo":"desc","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hc_consumableList_setupDate_asc:
+  path: /web-server/api/device/consumableList
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"setupDate","orderByTwo":"asc","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hc_consumableList_filterTime_desc:
+  path: /web-server/api/device/consumableList
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"filterTime","orderByTwo":"desc","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hc_consumableList_filterTime_asc:
+  path: /web-server/api/device/consumableList
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"filterTime","orderByTwo":"asc","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hc_consumableList_tubeTime_desc:
+  path: /web-server/api/device/consumableList
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"tubeTime","orderByTwo":"desc","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hc_consumableList_tubeTime_asc:
+  path: /web-server/api/device/consumableList
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"tubeTime","orderByTwo":"asc","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hc_consumableList_frameTime_desc:
+  path: /web-server/api/device/consumableList
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"frameTime","orderByTwo":"desc","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hc_consumableList_frameTime_asc:
+  path: /web-server/api/device/consumableList
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"frameTime","orderByTwo":"asc","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hc_consumableList_venturiMaskTime_desc:
+  path: /web-server/api/device/consumableList
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"venturiMaskTime","orderByTwo":"desc","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hc_consumableList_venturiMaskTime_asc:
+  path: /web-server/api/device/consumableList
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"venturiMaskTime","orderByTwo":"asc","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hc_consumableList_resistanceBandTime_desc:
+  path: /web-server/api/device/consumableList
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"resistanceBandTime","orderByTwo":"desc","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hc_consumableList_resistanceBandTime_asc:
+  path: /web-server/api/device/consumableList
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"resistanceBandTime","orderByTwo":"asc","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hc_consumableList_waterTankTime_desc:
+  path: /web-server/api/device/consumableList
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"waterTankTime","orderByTwo":"desc","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hc_consumableList_waterTankTime_asc:
+  path: /web-server/api/device/consumableList
+  method: post
+  remark: 排序
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"orderBy":"waterTankTime","orderByTwo":"asc","page":{"currentPage":1,"showCount":15}}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hcgetCycle:
+  path: /web-server/api/device/getCycle
+  method: get
+  remark: 获取机构耗材编号
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data:
+  extract_key:
+    hcid: $.data.id
+    hcjg: $.data.institutionId
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hcinstitutionList:
+  path: /web-server/api/user/institutionList
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"deviceId":"","instiutionNameq":"","userId":"$.id"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hcselAreaENtityVolistPage:
+  path: /web-server/api/areaPersonnel/selAreaENtityVolistPage
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"firsName":"","userName":"","roleName":"","page":{"currentPage":1,"showCount":1000}}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hclistAllUse:
+  path: /web-server/api/soft/listAllUse
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {}
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"0000" in "$.status"']
+hcsearch:
+  path: /web-server/api/device/update/search
+  method: post
+  remark:
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"type":2,"name":"","svn":"","status":2,"page":{"showCount":15,"currentPage":1}}
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"0000" in "$.status"']
+hcsetCycle_1:
+  path: /web-server/api/device/setCycle
+  method: post
+  remark: 自定义细分
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"id":$.hcid,"institutionId":"$.hcjg","maskCycle":180,"filterCycle":30,"tubeCycle":365,"waterTankCycle":180,"venturiMaskCycle":180,"frameCycle":180,"resistanceBandCycle":180,"maskIsSubdivide":true,"type":1,"addTime":"2022-10-22 01:55:30"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hcsetCycle_2:
+  path: /web-server/api/device/setCycle
+  method: post
+  remark: 自定义不细分
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"id":$.hcid,"institutionId":"$.hcjg","maskCycle":180,"filterCycle":30,"tubeCycle":365,"waterTankCycle":180,"venturiMaskCycle":180,"frameCycle":180,"resistanceBandCycle":180,"maskIsSubdivide":false,"type":1,"addTime":"2022-10-22 01:55:30"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hcsetCycle_3:
+  path: /web-server/api/device/setCycle
+  method: post
+  remark: 默认细分
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"id":$.hcid,"institutionId":"$.hcjg","maskCycle":180,"filterCycle":30,"tubeCycle":365,"waterTankCycle":180,"venturiMaskCycle":180,"frameCycle":180,"resistanceBandCycle":180,"maskIsSubdivide":true,"type":0,"addTime":"2022-10-22 01:55:30"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hcsetCycle_4:
+  path: /web-server/api/device/setCycle
+  method: post
+  remark: 默认不细分
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"id":$.hcid,"institutionId":"$.hcjg","maskCycle":180,"filterCycle":30,"tubeCycle":365,"waterTankCycle":180,"venturiMaskCycle":180,"frameCycle":180,"resistanceBandCycle":180,"maskIsSubdivide":false,"type":0,"addTime":"2022-10-22 01:55:30"}
+  extract_key:
+  assert_expression:
+    ['"200" in "$.errCode"','"True" in "$.success"']
+hcupdateConsumableTime:
+  path: /web-server/api/device/updateConsumableTime
+  method: post
+  remark: 更换耗材时间
+  is_run: true
+  precondition_sql:
+  # 前置sql
+  data: {"deviceId":"$.hcsn","filterTime":"2022-11-06"}
+  extract_key:
+  assert_expression:
+    ['"00000" in "$.msg"','"0000" in "$.status"']
+
+

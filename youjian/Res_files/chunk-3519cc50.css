@@ -1,0 +1,314 @@
+
+.el-cascader-node {
+  max-width: 300px;
+}
+
+.bdColor[data-v-79c78871] {
+  color: #2f7dc1;
+}
+.warningText[data-v-79c78871] {
+  color: #e6a23c;
+}
+.dangerText[data-v-79c78871] {
+  color: #d9001b;
+}
+.successText[data-v-79c78871] {
+  color: #67c23a;
+}
+.warningBg[data-v-79c78871] {
+  background-color: #e6a23c;
+}
+.dangerBg[data-v-79c78871] {
+  background-color: #d9001b;
+}
+.successBg[data-v-79c78871] {
+  background-color: #67c23a;
+}
+.fl_sb[data-v-79c78871] {
+  display: flex;
+  justify-content: space-between;
+}
+.fl_as[data-v-79c78871] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.fl_st[data-v-79c78871] {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.fl_cc[data-v-79c78871] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fl_wrap[data-v-79c78871] {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.colorPr[data-v-79c78871] {
+  color: #2662f0;
+}
+.colorTxt892[data-v-79c78871] {
+  color: #8f92a1;
+}
+.textDUb[data-v-79c78871] {
+  text-decoration: underline;
+}
+.fz14[data-v-79c78871] {
+  font-size: 14px;
+}
+.fz_20[data-v-79c78871] {
+  font-size: 22px;
+  font-weight: 400;
+  color: #566770;
+}
+.fz_waming[data-v-79c78871] {
+  color: #e6a23c;
+}
+.text5[data-v-79c78871] {
+  display: inline-block;
+  max-width: 8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mt20[data-v-79c78871] {
+  margin-top: 20px !important;
+}
+.noData[data-v-79c78871] {
+  margin: 200px 0;
+  text-align: center;
+}
+.el-button--primary[data-v-79c78871] {
+  border: 1px solid #2f7dc1;
+  color: #2f7dc1;
+  background: #fff;
+}
+.el-button[data-v-79c78871] {
+  min-width: 80px;
+  border-radius: 12px;
+}
+.el-input__inner[data-v-79c78871] {
+  border-radius: 8px;
+}
+.el-button--primary.bg[data-v-79c78871] {
+  border-radius: 30px;
+  border: 1px solid #0052cc;
+  color: #fff;
+  background: #0052cc;
+}
+.el-button--primary.bg2f[data-v-79c78871] {
+  width: 100%;
+  border: 1px solid #2f7dc1;
+  color: #fff;
+  background: #2f7dc1;
+}
+.el-table[data-v-79c78871] {
+  overflow: hidden;
+  border-radius: 4px;
+}
+.el-table .el-table__cell[data-v-79c78871] {
+  padding: 22px 0;
+}
+.el-table .el-table__body-wrapper[data-v-79c78871] {
+  padding-right: 20px;
+}
+.el-date-editor .el-range-separator[data-v-79c78871] {
+  width: 10%;
+}
+.AddPatient[data-v-79c78871] {
+  margin-top: 20px;
+}
+.AddPatient[data-v-79c78871] .el-dialog__body {
+  padding: 20px;
+}
+.AddPatient[data-v-79c78871] .CommonTable .table {
+  height: calc(100vh - 460px);
+  min-height: 150px;
+}
+.AddPatient[data-v-79c78871] .CommonTable .table .el-table__body-wrapper {
+  height: calc(100% - 96px) !important;
+}
+.searchContainer[data-v-79c78871] {
+  margin-bottom: 10px;
+  padding-bottom: 0;
+}
+.loadingTip[data-v-79c78871] {
+  height: 18px;
+  text-align: center;
+  margin-top: 2px;
+}
+[data-v-79c78871] .reporyDay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+[data-v-79c78871] .reporyDay .el-select {
+  width: 100px;
+}
+[data-v-79c78871] .reporyDay .el-date-editor {
+  width: 230px;
+}
+.left[data-v-79c78871] {
+  width: calc(100% - 100px);
+  display: inline-block;
+}
+.left .el-form-item[data-v-79c78871] {
+  display: inline-block;
+}
+.right[data-v-79c78871] {
+  width: 100px;
+  display: inline-block;
+}
+.right .el-button[data-v-79c78871] {
+  width: 100px;
+  margin: 5px 0;
+  font-size: 12px;
+}
+.input-text-left input[data-v-79c78871] {
+  text-align: left;
+}
+
+.bdColor[data-v-711e85d9] {
+  color: #2f7dc1;
+}
+.warningText[data-v-711e85d9] {
+  color: #e6a23c;
+}
+.dangerText[data-v-711e85d9] {
+  color: #d9001b;
+}
+.successText[data-v-711e85d9] {
+  color: #67c23a;
+}
+.warningBg[data-v-711e85d9] {
+  background-color: #e6a23c;
+}
+.dangerBg[data-v-711e85d9] {
+  background-color: #d9001b;
+}
+.successBg[data-v-711e85d9] {
+  background-color: #67c23a;
+}
+.fl_sb[data-v-711e85d9] {
+  display: flex;
+  justify-content: space-between;
+}
+.fl_as[data-v-711e85d9] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.fl_st[data-v-711e85d9] {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.fl_cc[data-v-711e85d9] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fl_wrap[data-v-711e85d9] {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.colorPr[data-v-711e85d9] {
+  color: #2662f0;
+}
+.colorTxt892[data-v-711e85d9] {
+  color: #8f92a1;
+}
+.textDUb[data-v-711e85d9] {
+  text-decoration: underline;
+}
+.fz14[data-v-711e85d9] {
+  font-size: 14px;
+}
+.fz_20[data-v-711e85d9] {
+  font-size: 22px;
+  font-weight: 400;
+  color: #566770;
+}
+.fz_waming[data-v-711e85d9] {
+  color: #e6a23c;
+}
+.text5[data-v-711e85d9] {
+  display: inline-block;
+  max-width: 8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mt20[data-v-711e85d9] {
+  margin-top: 20px !important;
+}
+.noData[data-v-711e85d9] {
+  margin: 200px 0;
+  text-align: center;
+}
+.el-button--primary[data-v-711e85d9] {
+  border: 1px solid #2f7dc1;
+  color: #2f7dc1;
+  background: #fff;
+}
+.el-button[data-v-711e85d9] {
+  min-width: 80px;
+  border-radius: 12px;
+}
+.el-input__inner[data-v-711e85d9] {
+  border-radius: 8px;
+}
+.el-button--primary.bg[data-v-711e85d9] {
+  border-radius: 30px;
+  border: 1px solid #0052cc;
+  color: #fff;
+  background: #0052cc;
+}
+.el-button--primary.bg2f[data-v-711e85d9] {
+  width: 100%;
+  border: 1px solid #2f7dc1;
+  color: #fff;
+  background: #2f7dc1;
+}
+.el-table[data-v-711e85d9] {
+  overflow: hidden;
+  border-radius: 4px;
+}
+.el-table .el-table__cell[data-v-711e85d9] {
+  padding: 22px 0;
+}
+.el-table .el-table__body-wrapper[data-v-711e85d9] {
+  padding-right: 20px;
+}
+.el-date-editor .el-range-separator[data-v-711e85d9] {
+  width: 10%;
+}
+.batchExportReport[data-v-711e85d9] .el-dialog__body {
+  padding: 20px;
+}
+.batchExportReport .fz_waming[data-v-711e85d9] {
+  font-size: 12px;
+}
+.batchExportReport .fz_waming span[data-v-711e85d9] {
+  margin-left: 5px;
+}
+.batchExportReport .noData[data-v-711e85d9] {
+  text-align: center;
+  line-height: 210px;
+}
+header[data-v-711e85d9] {
+  font-size: 20px;
+}
+
+
+.batchExportReport .el-table .el-table__body-wrapper{
+    padding-right: 0;
+}
+

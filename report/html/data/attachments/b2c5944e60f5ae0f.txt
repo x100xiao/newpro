@@ -1,0 +1,8 @@
+INFO     test:test_case.py:17 ---开始运行 "qyregioninfolist"用例,该用例属于case/aqxgl/qygl.yaml文件---
+INFO     test:case.py:19 用例原始数据：{'path': '/web-server/api/area/sonAreaMangelistByPage', 'method': 'post', 'remark': '区域详情搜索', 'is_run': True, 'precondition_sql': None, 'data': {'deviceId': '', 'doctorName': '', 'patientName': '', 'type': '', 'assigned': '', 'orderBy': 'addTime', 'orderByTwo': 'desc', 'id': '19', 'page': {'currentPage': 1, 'showCount': 15}}, 'extract_key': None, 'assert_expression': ['"200" in "$.errCode"', '"True" in "$.success"'], 'case_title': 'qyregioninfolist'}
+INFO     test:requests_.py:70 POST请求的最终请求地址:https://uat.resvent.com/web-server/api/area/sonAreaMangelistByPage
+INFO     test:requests_.py:73 https://uat.resvent.com/web-server/api/area/sonAreaMangelistByPage返回结果：{'success': True, 'data': {'page': {'showCount': 15, 'totalPage': 0, 'totalResult': 0, 'currentPage': 0, 'currentResult': 0, 'entityOrField': False, 'orderby': None, 'keyword': None}, 'data': []}, 'errCode': 200}
+INFO     test:case.py:11 提取参数字典None
+INFO     test:assert_.py:16 初始断言列表[]
+INFO     test:assert_.py:35 断言表达式新列表：['"200" in "200"', '"True" in "True"']
+INFO     test:case.py:45 -----"qyregioninfolist"用例运行完成------

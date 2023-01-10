@@ -1,0 +1,77 @@
+#用例(名称)标题
+用例标题:
+  #接口地址
+  path: /test
+  #请求方法
+  method: post
+  # 备注信息
+  remark: 这个是使用模板
+  # 是否运行
+  is_run: True
+  # 前置sql：sql有2大类，一个是查询有返回值，一个是增删改无返回值，前置sql为无返回值类型
+  precondition_sql:
+    - UPDATE case_test SET title = '标题2', ex = '44' WHERE id = 2
+    - UPDATE case_test SET title = '标题3', ex = '55' WHERE id = 3
+  #请求参数较多，这里就使用原始字典格式，除了提取表达式，其他的都带上引号，预防出错,random_time()随机函数使用
+  data:
+    {
+      "id":$.id,
+      "projectNo": "320SF000206004",
+      "name":$.name,
+      "time": random_time(),
+      "str": random_str(6),
+      "int": random_number(5),
+      # 请求参数sql为有返回值查询
+      "sql": sql-SELECT title FROM case_test where id=2
+    }
+  #从接口返回结果提取哪些字段和提取表达式,比如从返回数据提取用户id和name
+  extract_key:
+    id: $.id
+    name: $.name
+  #断言表达式
+  # 除了数字类型比较，其他的字符或者表达式全部带上引号,表达式必须要写在后面（必须按照格式来）
+  assert_expression:
+     # 断言sql为有返回值查询
+   ["'12' in '123'", '"ig" == "$.ig"', '1=="sql-SELECT title FROM case_test where id=2"']
+
+
+参数list:
+ path: /list
+ method: post
+ remark: 参数list的参数替换模板
+ is_run: True
+ precondition_sql:
+ data:
+   #list请求参数使用和json的无区别
+   [$.waybillid,random_number(5)]
+ extract_key:
+ assert_expression:
+   ['"成功"=="$.msg"']
+
+参数嵌套替换:
+  path: /ccsstthh
+  method: post
+  remark: ctms发车
+  is_run: True
+  precondition_sql:
+  data:
+
+    {
+      #参数嵌套的不影响之前的参数替换使用
+      "a":$.a,
+      "b":"bba",
+      "shiftIdList":[
+      {
+        #参数嵌套这种格式暂时只支持[{},{},{}],在参数嵌套里面使用需要加上^^
+        "id":^$.shiftid^,
+       "sendTime":^random_time()^
+      },
+      {
+        "waybillId":^$.waybillid^
+      }
+      ]
+    }
+  extract_key:
+  assert_expression:
+    ['"成功"=="$.msg"']
+

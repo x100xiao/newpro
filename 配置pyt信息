@@ -1,0 +1,39 @@
+
+# 多个以空格隔开
+norecursedirs = tool sql  不执行tool和sql文件夹
+testpaths = tool          只执行tool文件夹
+python_files = test_*.py  匹配用例文件
+python_classes =Test*     匹配Test开头的类
+python_functions = test_* 匹配test开头的方法
+# 注册Mark标记
+markers =
+    demo : marks tests as demo
+    smoke: marks tests as smoke
+    test : marks tests as test
+--alluredir=DIR  DIR在指定目录中生成Allure报告（可能不存在）
+--clean-alluredir  alluredir如果存在，清除alluredir文件夹
+--durations=N        显示N个最慢的测试持续时间
+--durations-min=N     N包含在最慢列表中的最小持续时间
+生成JunitXML格式的测试报告，命令：--junitxml=path
+生成ResultLog格式的测试报告，命令：--resultlog=report/log.txt
+生成Html格式的测试报告，命令：--html=OutPuts/reports/report.html（相对路径）
+allure generate 测试结果文件目录 -o 输入html文件的目录 --clean
+--clean表示每次执行该命令行都先清除输入html文件的目录下的文件
+allure generate OutPuts/allure -o OutPuts/allure_html --clean
+addopts = -vs --html=./report/report.html --self-contained-html  生成的html中包含了测试信息
+addopts = -vs --html=./report/report.html 生成的HTML报告和数据分离的
+addopts = -vs --alluredir ./report/allure_raw --durations=0 --clean-alluredir
+[pytest]
+markers =
+    smoke:marks tests as smoke.
+    demo:marks tests asa demo.
+testpaths=./cases
+addopts=-vsq --reruns 1 --html=output/report/html/report.html --alluredir=output/report/allure_report
+-q: 输入简要信息
+--reruns 1 ：失败重跑1次
+base_url=https://www.baidu.com/
+
+os.system(“allure generate ./report/result -o ./report/html --clean”)
+
+#打开测试报告
+os.system(“allure serve ./report/result”)
